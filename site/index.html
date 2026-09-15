@@ -1,26 +1,965 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LP Office — 등불 편집회로</title>
-<meta name="description" content="The Lantern Protocol의 AI 협업 집필 공방">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🏮</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LP Office · 등불 편집회로</title>
+<meta name="description" content="The Lantern Protocol 크루가 성인 단편소설을 함께 만드는 편집 공방">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🕯️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{--deep:#241c17;--wood:#332620;--wood-l:#4b392c;--paper:#f3e7cb;--paper-l:#e7d8b4;--gold:#c89a4c;--gold-b:#e7be79;--ink:#241a10;--muted:#c7b394;--red:#b1503c;--line:rgba(243,231,203,.16)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,var(--wood-l),transparent 60%),var(--deep);color:#f6ecd9;font-family:"Noto Sans KR",sans-serif;overflow-x:hidden}.mono{font-family:"IBM Plex Mono",monospace}.page{position:relative;max-width:70rem;margin:auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,4vw,2.5rem) 3.5rem}.motes{position:fixed;inset:0;pointer-events:none;overflow:hidden}.motes i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold-b);opacity:.45;animation:drift 12s ease-in-out infinite}.motes i:nth-child(1){left:11%;top:33%}.motes i:nth-child(2){left:78%;top:18%;animation-delay:2s}.motes i:nth-child(3){left:65%;top:72%;animation-delay:5s}.motes i:nth-child(4){left:28%;top:80%;animation-delay:7s}@keyframes drift{50%{transform:translate(12px,-24px);opacity:.85}}.mast{text-align:center}.eyebrow{margin:0;color:var(--gold);font:500 .7rem "IBM Plex Mono",monospace;letter-spacing:.3em;text-transform:uppercase}.mast h1{margin:.55rem 0 .6rem;font:700 clamp(2.4rem,6vw,4rem) "Gowun Batang",serif}.mast .sub{margin:0 auto;color:var(--muted);font-size:.92rem;line-height:1.8;max-width:34rem}.lantern{font-size:2rem;margin-bottom:.3rem;filter:drop-shadow(0 0 1rem rgba(231,190,121,.5))}.section{margin-top:clamp(2.7rem,6vw,4.5rem)}.section-head{text-align:center;margin-bottom:1.3rem}.section-head h2{margin:.35rem 0 0;font:700 clamp(1.25rem,3vw,1.7rem) "Gowun Batang",serif}.section-head p:last-child{margin:.4rem 0 0;color:var(--muted);font-size:.78rem}.cabinet{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.niche{position:relative;text-align:center;color:var(--ink);background:linear-gradient(180deg,var(--paper),var(--paper-l));border-radius:1.45rem 1.45rem .45rem .45rem;padding:1.35rem 1rem 1.1rem;box-shadow:0 1.2rem 2rem -1rem #000b,inset 0 0 0 1px #241a100e;transition:transform .2s}.niche:hover{transform:translateY(-.35rem)}.niche:before{content:"";position:absolute;left:.35rem;right:.35rem;top:-.5rem;height:.75rem;border-radius:1rem 1rem 0 0;background:var(--wood);opacity:.5}.portrait{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.7rem;display:block;filter:saturate(.72) sepia(.12);margin-bottom:.9rem}.niche h3{margin:0;font:700 1.05rem "Gowun Batang",serif}.niche .role{margin:.15rem 0;color:#6b5a3f;font-size:.7rem}.niche .duty{margin:.65rem 0 0;color:#4a3b26;font-size:.76rem;line-height:1.55}.niche .state{display:inline-flex;align-items:center;gap:.35rem;margin-top:.8rem;color:#2f6e48;font:500 .62rem "IBM Plex Mono",monospace}.state b{width:.45rem;height:.45rem;border-radius:50%;background:#3e8e5b;box-shadow:0 0 6px #3e8e5baa}.future{opacity:.62;filter:grayscale(.6)}.future .portrait{object-position:center}.future .state{color:#786a53}.future .state b{background:#786a53;box-shadow:none}.flow{display:flex;align-items:flex-start;justify-content:center;gap:0;flex-wrap:wrap}.step{width:8.2rem;text-align:center}.step .avatar{width:3.4rem;height:3.4rem;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:block;margin:auto}.step h3{margin:.55rem 0 .35rem;font:700 .95rem "Gowun Batang",serif}.step .cmd{display:inline-block;padding:.17rem .48rem;border-radius:.3rem;background:#c89a4c1f;color:var(--gold-b);font:500 .65rem "IBM Plex Mono",monospace}.step p{margin:.45rem 0;color:var(--muted);font-size:.68rem;line-height:1.45}.connector{width:2.2rem;height:1px;margin-top:1.7rem;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 11px)}.cycle-note{margin:.6rem auto 0;max-width:30rem;text-align:center;color:var(--red);font-size:.7rem}.archive{display:flex;flex-direction:column;gap:.55rem}.book{display:block;padding:1rem 1.2rem;text-decoration:none;color:#f6ecd9;background:linear-gradient(90deg,var(--wood-l),var(--wood));border-left:4px solid var(--gold);border-radius:.4rem;transition:filter .2s}.book:hover{filter:brightness(1.12)}.book strong{font:700 1rem "Gowun Batang",serif}.book small{display:block;margin-top:.3rem;color:var(--muted);font:400 .68rem "IBM Plex Mono",monospace}.score{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.card{padding:1.25rem;background:linear-gradient(135deg,var(--wood-l),var(--wood));border:1px solid var(--line);border-radius:1rem}.card h3{margin:0 0 1rem;font:700 1.1rem "Gowun Batang",serif}.score-row{margin:.85rem 0}.score-label{display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem;margin-bottom:.3rem}.score-label b{color:var(--gold-b);font:500 .7rem "IBM Plex Mono",monospace}.bar{height:.42rem;background:#f3e7cb18;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold-b));border-radius:inherit}.card ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}.card li{color:var(--muted);font-size:.73rem;line-height:1.5}.card li:before{content:"✦";color:var(--gold);margin-right:.45rem}.footer{margin-top:4rem;padding-top:1.1rem;border-top:1px solid var(--line);text-align:center;color:#9f8d72;font-size:.68rem;line-height:1.7}.footer a{color:var(--gold-b)}@media(max-width:760px){.cabinet{grid-template-columns:repeat(2,1fr)}.connector{display:none}.score{grid-template-columns:1fr}}@media(max-width:430px){.cabinet{grid-template-columns:1fr}.flow{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.step{width:auto}.mast h1{font-size:2.6rem}}
-</style></head>
-<body><div class="motes" aria-hidden="true"><i></i><i></i><i></i><i></i></div><main class="page">
-<header class="mast"><div class="lantern" aria-hidden="true">🏮</div><p class="eyebrow">THE LANTERN PROTOCOL · LP OFFICE</p><h1>등불 편집회로</h1><p class="sub">한 원고를 여러 시선으로 비추고, 검증하고, 다시 쓰는 AI 협업 집필 공방</p></header>
-<section class="section"><div class="section-head"><p class="eyebrow">OPEN ROOMS</p><h2>지금 불이 켜진 방</h2><p>이번 단편소설을 함께 만드는 편집 크루</p></div><div class="cabinet">
-<article class="niche"><img class="portrait" src="images/planner.jpg" alt="기획자" loading="lazy"><h3>기획자</h3><p class="role">The Planner · Design</p><p class="duty">작품의 질문과 인물의 선택을 설계합니다.</p><span class="state"><b></b>READY</span></article>
-<article class="niche"><img class="portrait" src="images/writer.jpg" alt="작가" loading="lazy"><h3>작가</h3><p class="role">The Writer · Draft</p><p class="duty">기획을 장면과 목소리를 가진 원고로 옮깁니다.</p><span class="state"><b></b>READY</span></article>
-<article class="niche"><img class="portrait" src="images/critic.jpg" alt="해부자" loading="lazy"><h3>해부자</h3><p class="role">The Dissector · Dissect</p><p class="duty">구조·인물·문체의 문제를 구체적으로 찾습니다.</p><span class="state"><b></b>READY</span></article>
-<article class="niche"><img class="portrait" src="images/advisor.jpg" alt="문학 고문" loading="lazy"><h3>문학 고문</h3><p class="role">The Counsel · Counsel</p><p class="duty">문학성·윤리성·성인 독자의 잔상을 묻습니다.</p><span class="state"><b></b>READY</span></article>
-</div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">NEIGHBORS IN PREPARATION</p><h2>다음에 합류할 이웃들</h2></div><div class="cabinet"><article class="niche future"><img class="portrait" src="images/reviser.jpg" alt="개정자" loading="lazy" onerror="this.src='images/designer.jpg'"><h3>개정자</h3><p class="role">The Reviser · Revise</p><p class="duty">진단된 문제를 실제 장면과 문장으로 고칩니다.</p><span class="state"><b></b>PREPARING</span></article><article class="niche future"><img class="portrait" src="images/researcher.jpg" alt="리서처" loading="lazy"><h3>리서처</h3><p class="role">The Researcher · Ground</p><p class="duty">사실성과 유사성 리스크를 확인합니다.</p><span class="state"><b></b>PREPARING</span></article><article class="niche future"><img class="portrait" src="images/marketer.jpg" alt="독자 대변인" loading="lazy"><h3>독자 대변인</h3><p class="role">The Reader · Reach</p><p class="duty">대중성과 확장 가능성을 점검합니다.</p><span class="state"><b></b>PREPARING</span></article><article class="niche future"><img class="portrait" src="images/admin.jpg" alt="기록 관리자" loading="lazy"><h3>기록 관리자</h3><p class="role">The Archivist · Seal</p><p class="duty">프롬프트와 개정 이력을 출품 기록으로 보존합니다.</p><span class="state"><b></b>PREPARING</span></article></div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">EDITORIAL CIRCUIT</p><h2>Lanterning의 일하는 순서</h2><p>Seven stages · One manuscript</p></div><div class="flow"><div class="step"><img class="avatar" src="images/planner.jpg" alt=""><h3>Gather · 채집</h3><span class="cmd">01</span><p>소재·장면·질문을 모읍니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/planner.jpg" alt=""><h3>Design · 기획</h3><span class="cmd">02</span><p>서사의 골격을 세웁니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/writer.jpg" alt=""><h3>Draft · 집필</h3><span class="cmd">03</span><p>이야기와 문장으로 만듭니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/critic.jpg" alt=""><h3>Dissect · 해부</h3><span class="cmd">04</span><p>작동하지 않는 곳을 찾습니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/advisor.jpg" alt=""><h3>Counsel · 자문</h3><span class="cmd">05</span><p>문학성과 독자성을 묻습니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/designer.jpg" alt=""><h3>Revise · 개정</h3><span class="cmd">06</span><p>다시 쓰고 다듬습니다.</p></div><span class="connector"></span><div class="step"><img class="avatar" src="images/admin.jpg" alt=""><h3>Seal · 봉인</h3><span class="cmd">07</span><p>원고와 협업 기록을 확정합니다.</p></div></div><p class="cycle-note">↺ Dissect → Counsel → Revise는 충분히 좋아질 때까지 반복합니다.</p></section>
-<section class="section"><div class="section-head"><p class="eyebrow">JUDGING LENS</p><h2>이번 공모전의 세 가지 빛</h2></div><div class="score"><div class="card"><h3>심사 기준</h3><div class="score-row"><div class="score-label"><span>문학적 완성도</span><b>50%</b></div><div class="bar"><i style="width:50%"></i></div></div><div class="score-row"><div class="score-label"><span>AI 활용의 독창성 및 협업 과정</span><b>30%</b></div><div class="bar"><i style="width:30%"></i></div></div><div class="score-row"><div class="score-label"><span>대중성 및 확장 가능성</span><b>20%</b></div><div class="bar"><i style="width:20%"></i></div></div></div><div class="card"><h3>봉인할 기록</h3><ul><li>단편소설 원고와 버전별 초고</li><li>역할별 프롬프트와 산출물</li><li>해부·자문·개정의 판단 근거</li><li>창작자와 AI가 각각 결정한 내용</li></ul></div></div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">MANUSCRIPT SHELF</p><h2>공방 서재</h2><p>기존 산출물과 앞으로 봉인될 원고</p></div><div class="archive"><a class="book" href="stories/반딧불이-콩콩이.html"><strong>기존 완성작 서재</strong><small>Stories · 전자책 페이지 리더 →</small></a><a class="book" href="reports/2026-08-30.html"><strong>협업 주간보고</strong><small>Reports · 실제 작업 기록 →</small></a></div></section>
-<footer class="footer">현재 LP Office는 사람이 각 단계를 확인하는 수동 트리거 기반 공방입니다.<br><a href="https://github.com/jgjeong730/bookshelf1" target="_blank" rel="noopener">GitHub에서 공방의 도면 보기 →</a></footer>
-</main></body></html>
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  }
+
+  :root {
+    --wood-deep: #241C17;
+    --wood: #332620;
+    --wood-light: #4B392C;
+    --parchment: #F3E7CB;
+    --parchment-soft: #E7D8B4;
+    --brass: #C89A4C;
+    --brass-bright: #E7BE79;
+    --ink: #241A10;
+    --paper-ink: #F6ECD9;
+    --muted-paper: #C7B394;
+    --signal: #B1503C;
+    --hairline: rgba(243, 231, 203, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, var(--wood-light), transparent 60%),
+      var(--wood-deep);
+    color: var(--paper-ink);
+    font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+
+  .motes { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .mote {
+    position: absolute; width: 3px; height: 3px; border-radius: 50%;
+    background: var(--brass-bright); opacity: .55; filter: blur(.3px);
+    animation: drift 14s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: .25; }
+    50% { transform: translateY(-22px) translateX(8px); opacity: .75; }
+  }
+
+  .page {
+    position: relative; z-index: 1;
+    max-width: 68rem; margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.2rem, 4vw, 2.5rem) 3.5rem;
+    display: flex; flex-direction: column; gap: clamp(2.6rem, 6vw, 4rem);
+  }
+
+  .masthead { text-align: center; display: flex; flex-direction: column; gap: .6rem; align-items: center; }
+  .eyebrow {
+    font-size: .72rem; letter-spacing: .32em; text-transform: uppercase;
+    color: var(--brass); font-weight: 500; margin: 0;
+  }
+  h1 {
+    font-family: "Gowun Batang", serif; font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0; letter-spacing: -.01em;
+    text-wrap: balance; color: var(--paper-ink);
+  }
+  .tagline { margin: 0; color: var(--muted-paper); font-size: 1rem; max-width: 32rem; text-wrap: balance; }
+
+  section { display: flex; flex-direction: column; gap: 1.4rem; }
+  .section-head { display: flex; flex-direction: column; gap: .3rem; text-align: center; }
+  .section-head h2 {
+    font-family: "Gowun Batang", serif; font-weight: 700; margin: 0;
+    font-size: clamp(1.25rem, 3vw, 1.6rem); color: var(--paper-ink);
+  }
+
+  .cabinet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+  .cabinet.future { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 760px) {
+    .cabinet, .cabinet.future { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 460px) {
+    .cabinet, .cabinet.future { grid-template-columns: 1fr; }
+  }
+
+  .niche {
+    position: relative;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-soft) 100%);
+    border-radius: 1.6rem 1.6rem .5rem .5rem;
+    padding: 1.6rem 1.2rem 1.3rem;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: .5rem;
+    box-shadow: 0 1.2rem 2rem -1rem rgba(0,0,0,.55), inset 0 0 0 1px rgba(36,26,16,.06);
+    color: var(--ink);
+  }
+  .niche::before {
+    content: ""; position: absolute; inset: .4rem .4rem auto .4rem; top: -.55rem;
+    height: .8rem; border-radius: 1.2rem 1.2rem 0 0;
+    background: var(--wood); opacity: .35;
+  }
+
+  .candle-wrap { position: relative; width: 2.6rem; height: 2.6rem; margin-bottom: .1rem; }
+  .candle {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: .55rem; height: .95rem; border-radius: 40% 40% 50% 50%;
+    background: radial-gradient(circle at 50% 20%, #FFE9A8, var(--signal) 85%);
+    animation: flicker 2.6s ease-in-out infinite;
+  }
+  .candle-glow {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 2.6rem; height: 2.6rem; border-radius: 50%;
+    background: radial-gradient(circle, rgba(231,190,121,.55), transparent 70%);
+    animation: flicker 2.6s ease-in-out infinite;
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: .85; transform: translate(-50%, -50%) scale(1); }
+    45% { opacity: 1; transform: translate(-50%, -50%) scale(1.06); }
+    60% { opacity: .75; transform: translate(-50%,-49%) scale(.97); }
+  }
+
+  .glyph { width: 3.4rem; height: 3.4rem; color: var(--signal); }
+  .glyph svg { width: 100%; height: 100%; }
+
+  .niche-name { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.15rem; margin: .1rem 0 0; }
+  .niche-room { margin: -.3rem 0 0; font-size: .74rem; letter-spacing: .06em; color: #6B5A3F; }
+  .niche-duty { margin: .2rem 0 0; font-size: .82rem; line-height: 1.55; color: #4A3B26; }
+  .niche-bio { margin: .35rem 0 0; font-size: .74rem; line-height: 1.55; color: #6B5A3F; font-style: italic; }
+  .niche-stat {
+    margin: .5rem 0 0; padding-top: .5rem; width: 100%;
+    border-top: 1px dashed rgba(36,26,16,.2);
+    font-size: .78rem; color: #6B5A3F;
+  }
+  .niche-stat .num { font-family: "IBM Plex Mono", monospace; font-weight: 500; color: var(--signal); font-size: .95rem; }
+
+  .niche.is-future {
+    filter: grayscale(.5); opacity: .78;
+    padding: 1.2rem 1rem 1rem;
+  }
+  .niche.is-future .glyph { color: #7A6B52; width: 2.6rem; height: 2.6rem; }
+  .niche.is-future .niche-name { font-size: 1rem; }
+  .niche.is-future .niche-duty { font-size: .76rem; }
+  .niche.is-future .badge {
+    margin-top: .4rem; font-size: .68rem; letter-spacing: .08em;
+    color: #7A6B52; background: rgba(36,26,16,.08); padding: .2rem .6rem;
+    border-radius: 999px; font-family: "IBM Plex Mono", monospace;
+  }
+
+  .crew-card {
+    position: relative;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-soft) 100%);
+    border-radius: 1.4rem;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 1.2rem 2rem -1rem rgba(0,0,0,.55), inset 0 0 0 1px rgba(36,26,16,.06);
+    color: var(--ink);
+    cursor: pointer; transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .crew-card:hover, .crew-card:focus-visible {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1.8rem 2.6rem -1rem rgba(0,0,0,.65), inset 0 0 0 1px rgba(36,26,16,.06);
+    outline: none;
+  }
+  .crew-card:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+  .crew-card .portrait { position: relative; }
+  .crew-card .portrait::after {
+    content: "인사기록 보기 →"; position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(0deg, rgba(36,26,16,.82), transparent);
+    color: var(--brass-bright); font-family: "IBM Plex Mono", monospace; font-size: .68rem;
+    text-align: center; padding: 1.8rem 0 .5rem; opacity: 0; transition: opacity .18s ease; pointer-events: none;
+  }
+  .crew-card:hover .portrait::after, .crew-card:focus-visible .portrait::after { opacity: 1; }
+  .crew-card .portrait { width: 100%; aspect-ratio: 480 / 418; overflow: hidden; background: var(--wood); }
+  .crew-card .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .crew-card .crew-body {
+    padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; text-align: center;
+  }
+  .crew-persona { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.08rem; margin: 0; }
+  .crew-persona .en {
+    display: block; font-family: "IBM Plex Mono", monospace; font-weight: 400;
+    font-size: .66rem; letter-spacing: .05em; color: #6B5A3F; margin-top: .15rem;
+  }
+  .crew-role { margin: 0; font-size: .76rem; color: #6B5A3F; letter-spacing: .04em; }
+  .crew-status {
+    margin: .3rem 0 0; font-size: .74rem; font-family: "IBM Plex Mono", monospace; color: #4A3B26;
+    display: flex; align-items: center; justify-content: center; gap: .4rem;
+  }
+  .status-dot {
+    width: .5rem; height: .5rem; border-radius: 50%; background: #3E8E5B;
+    box-shadow: 0 0 6px rgba(62,142,91,.7); display: inline-block; flex: none;
+  }
+  .status-word { color: #2F6E48; font-weight: 500; }
+
+  .personnel-modal {
+    position: fixed; inset: 0; z-index: 998; display: flex; align-items: center; justify-content: center;
+    background: rgba(15,11,7,.72); backdrop-filter: blur(2px); padding: 1.2rem;
+  }
+  .personnel-modal[hidden] { display: none; }
+  .personnel-card {
+    position: relative; width: 100%; max-width: 34rem; max-height: 88vh; overflow-y: auto;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-soft) 100%);
+    color: var(--ink); border-radius: 1.2rem; padding: 2rem 2rem 1.6rem;
+    box-shadow: 0 2.5rem 5rem -1.5rem rgba(0,0,0,.8);
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+  .personnel-close {
+    position: absolute; top: .9rem; right: .9rem; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+    border: 1px solid rgba(36,26,16,.15); background: rgba(36,26,16,.06); color: var(--ink);
+    font-size: 1rem; cursor: pointer; line-height: 1;
+  }
+  .personnel-close:hover { background: rgba(36,26,16,.14); }
+  .personnel-head { display: flex; gap: 1.1rem; align-items: center; }
+  .personnel-photo { width: 5.2rem; height: 5.2rem; border-radius: 50%; object-fit: cover; border: 3px solid var(--brass); flex: none; }
+  .personnel-headtext { display: flex; flex-direction: column; gap: .15rem; }
+  .personnel-name { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.3rem; }
+  .personnel-en { font-family: "IBM Plex Mono", monospace; font-size: .72rem; color: #6B5A3F; }
+  .personnel-role { font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--signal); margin-top: .1rem; }
+  .personnel-engine { font-family: "IBM Plex Mono", monospace; font-size: .66rem; color: #6B5A3F; margin-top: .2rem; }
+  .personnel-eyebrow { font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); text-align: center; margin: 0 0 -.6rem; }
+  .personnel-field { display: flex; flex-direction: column; gap: .4rem; }
+  .personnel-field .label {
+    font-family: "IBM Plex Mono", monospace; font-size: .7rem; letter-spacing: .06em; color: var(--brass);
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .personnel-field .label::after { content: ""; flex: 1; height: 1px; background: rgba(36,26,16,.14); }
+  .personnel-field ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+  .personnel-field li, .personnel-field p { margin: 0; font-size: .88rem; line-height: 1.6; color: #3A2C1C; }
+  .personnel-field li::before { content: "· "; color: #8A7A5C; }
+  .personnel-foot { text-align: center; font-size: .72rem; color: #8A7A5C; font-style: italic; margin: .2rem 0 0; }
+
+  .process {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap; padding: .5rem 0;
+  }
+  .stage { display: flex; flex-direction: column; align-items: center; gap: .4rem; width: 8.5rem; }
+  .stage-dot {
+    width: 2.6rem; height: 2.6rem; border-radius: 50%;
+    background: var(--wood-light); border: 1px solid var(--hairline);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--brass-bright); font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1rem;
+  }
+  .stage-name { font-weight: 500; font-size: .88rem; color: var(--paper-ink); }
+  .stage-cmd {
+    font-family: "IBM Plex Mono", monospace; font-size: .74rem; color: var(--brass);
+    background: rgba(200,154,76,.12); padding: .15rem .55rem; border-radius: .3rem;
+  }
+  .stage-link {
+    flex: 0 0 2.4rem; height: 1px; background: repeating-linear-gradient(90deg, var(--hairline) 0 6px, transparent 6px 11px);
+    margin: 0 -.2rem; align-self: flex-start; margin-top: 1.7rem;
+  }
+  @media (max-width: 620px) {
+    .stage-link { display: none; }
+  }
+  .stage-avatar {
+    width: 3.4rem; height: 3.4rem; border-radius: 50%; overflow: hidden;
+    border: 2px solid var(--brass); flex: none;
+  }
+  .stage-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .stage-role { font-size: .66rem; color: var(--muted-paper); margin-top: -.3rem; }
+  .loop-note {
+    font-size: .66rem; color: var(--signal); text-align: center; margin-top: .2rem;
+    max-width: 9rem; line-height: 1.4;
+  }
+  .always-on {
+    margin-top: .6rem; padding-top: 1.2rem; border-top: 1px dashed var(--hairline);
+    display: flex; flex-direction: column; align-items: center; gap: .8rem;
+  }
+  .always-on .always-title {
+    font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass);
+  }
+  .always-row { display: flex; gap: 1.8rem; flex-wrap: wrap; justify-content: center; }
+  .always-item { display: flex; align-items: center; gap: .6rem; }
+  .always-item .stage-avatar { width: 2.5rem; height: 2.5rem; border-color: var(--muted-paper); }
+  .always-item .txt { display: flex; flex-direction: column; text-align: left; }
+  .always-item .txt .n { font-size: .82rem; font-weight: 500; color: var(--paper-ink); }
+  .always-item .txt .d { font-size: .7rem; color: var(--muted-paper); }
+
+  .shelf-note { margin: 0; text-align: center; font-size: .8rem; color: var(--muted-paper); }
+  .project-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+    background: linear-gradient(135deg, var(--wood-light), var(--wood));
+    border: 1px solid var(--hairline); border-radius: 1rem; padding: 1.2rem 1.4rem;
+  }
+  .project-card h3 { margin: .2rem 0 .45rem; font-family: "Gowun Batang", serif; font-size: 1.2rem; color: var(--paper-ink); }
+  .project-card p { margin: 0; color: var(--muted-paper); font-size: .78rem; line-height: 1.65; }
+  .project-card .project-label { color: var(--brass); font: 500 .68rem "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+  .project-card .package { border-left: 1px dashed var(--hairline); padding-left: 1.2rem; }
+  .project-card .package span { display: inline-block; margin: .2rem .25rem 0 0; padding: .18rem .45rem; border-radius: .25rem; color: var(--brass-bright); background: rgba(200,154,76,.14); font-size: .68rem; }
+  @media (max-width: 620px) { .project-card { grid-template-columns: 1fr; } .project-card .package { border-left: 0; border-top: 1px dashed var(--hairline); padding: 1rem 0 0; } }
+  .empty-note {
+    margin: 0; text-align: center; font-size: .82rem; color: var(--muted-paper);
+    border: 1px dashed var(--hairline); border-radius: .4rem; padding: 1.4rem 1rem;
+  }
+  .report-entry .book-title { font-size: .98rem; }
+  .report-entry .book-hook { color: var(--muted-paper); font-style: normal; }
+  .view-toggle { display: flex; justify-content: center; gap: .5rem; }
+  .view-toggle button {
+    font-family: "IBM Plex Mono", monospace; font-size: .72rem; letter-spacing: .03em;
+    background: transparent; color: var(--muted-paper); border: 1px solid var(--hairline);
+    padding: .35rem .9rem; border-radius: 999px; cursor: pointer;
+  }
+  .view-toggle button.active { background: var(--brass); color: var(--wood-deep); border-color: var(--brass); font-weight: 500; }
+  .view-toggle button:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+  .shelf { display: flex; flex-direction: column; gap: .6rem; }
+  .shelf.view-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem;
+  }
+  .shelf.view-grid .book-entry {
+    flex-direction: column; align-items: flex-start; gap: .5rem;
+    background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-soft) 100%);
+    border-left: none; border-top: 4px solid var(--brass); border-radius: .6rem;
+    padding: 1.2rem 1.2rem 1.4rem; color: var(--ink);
+  }
+  .shelf.view-grid .book-entry:hover, .shelf.view-grid .book-entry:focus-visible { background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-soft) 100%); filter: brightness(1.04); }
+  .shelf.view-grid .book-meta { color: #6B5A3F; }
+  .shelf.view-grid .book-hook { color: var(--signal); }
+  .shelf.view-grid .book-tag { background: rgba(36,26,16,.08); color: #6B5A3F; }
+  .shelf.view-grid .arrow { align-self: flex-end; margin-top: -1.6rem; }
+  .book-entry {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: linear-gradient(90deg, var(--wood-light), var(--wood));
+    border-left: 4px solid var(--brass);
+    border-radius: .4rem;
+    padding: 1rem 1.3rem;
+    text-decoration: none; color: var(--paper-ink);
+    transition: background .2s ease;
+  }
+  .book-entry:hover, .book-entry:focus-visible { background: linear-gradient(90deg, var(--wood), var(--wood-light)); }
+  .book-entry .book-text { display: flex; flex-direction: column; gap: .25rem; }
+  .book-entry .book-title { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.05rem; }
+  .book-entry .book-meta { font-family: "IBM Plex Mono", monospace; font-size: .7rem; color: var(--muted-paper); letter-spacing: .03em; }
+  .book-entry .book-hook { font-family: "Gowun Batang", serif; font-style: italic; font-size: .82rem; color: var(--brass-bright); }
+  .book-entry .book-tag {
+    font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .04em;
+    color: var(--brass-bright); background: rgba(200,154,76,.16); padding: .1rem .5rem;
+    border-radius: 999px; margin-left: .5rem;
+  }
+  .book-entry .arrow { color: var(--brass-bright); font-size: 1.2rem; flex: none; }
+  .book-entry .book-synopsis { font-family: "Noto Sans KR", sans-serif; font-size: .8rem; color: var(--paper-ink); line-height: 1.6; opacity: .92; }
+  .book-entry .book-diff { font-family: "Noto Sans KR", sans-serif; font-size: .74rem; color: var(--brass-bright); line-height: 1.5; }
+  .book-entry .book-diff::before { content: "차별점 · "; font-family: "IBM Plex Mono", monospace; color: var(--brass); }
+  .shelf.view-grid .book-synopsis { color: #4A3B26; }
+  .shelf.view-grid .book-diff { color: var(--signal); }
+  .shelf.view-grid .book-diff::before { color: #8A7A5C; }
+  .book-text-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; text-decoration: none; color: inherit; flex: 1; min-width: 0; }
+  .report-entry { gap: .6rem; }
+  .report-entry .slide-btn {
+    flex: none; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: rgba(200,154,76,.18); color: var(--brass-bright); text-decoration: none;
+    font-size: 1.05rem; transition: background .2s ease;
+  }
+  .report-entry .slide-btn:hover, .report-entry .slide-btn:focus-visible { background: rgba(200,154,76,.34); }
+  .shelf.view-grid .report-entry { flex-direction: row; align-items: center; background: linear-gradient(90deg, var(--wood-light), var(--wood)); border-top: none; border-left: 4px solid var(--brass); color: var(--paper-ink); border-radius: .4rem; padding: 1rem 1.3rem; }
+  .shelf.view-grid .report-entry .book-hook { color: var(--brass-bright); }
+  .shelf.view-grid .report-entry .book-meta { color: var(--muted-paper); }
+  .shelf.view-grid .report-entry .arrow { align-self: center; margin-top: 0; }
+
+  .colophon {
+    border-top: 1px solid var(--hairline);
+    padding-top: 1.4rem;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
+    font-size: .8rem; color: var(--muted-paper); line-height: 1.7;
+  }
+  .colophon p { margin: 0; max-width: 30rem; }
+  .colophon .links { display: flex; flex-direction: column; gap: .3rem; align-items: flex-end; }
+  .colophon a { color: var(--brass-bright); text-decoration: none; }
+  .colophon a:hover { text-decoration: underline; }
+  .colophon .stamp { font-family: "IBM Plex Mono", monospace; font-size: .72rem; color: #8A7A5C; }
+  @media (max-width: 560px) {
+    .colophon { flex-direction: column; }
+    .colophon .links { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="motes" aria-hidden="true">
+  <span class="mote" style="left:8%; top:20%; animation-delay:0s;"></span>
+  <span class="mote" style="left:22%; top:65%; animation-delay:1.2s;"></span>
+  <span class="mote" style="left:38%; top:12%; animation-delay:2.4s;"></span>
+  <span class="mote" style="left:52%; top:80%; animation-delay:.6s;"></span>
+  <span class="mote" style="left:67%; top:30%; animation-delay:1.8s;"></span>
+  <span class="mote" style="left:79%; top:55%; animation-delay:3s;"></span>
+  <span class="mote" style="left:90%; top:18%; animation-delay:.9s;"></span>
+  <span class="mote" style="left:14%; top:88%; animation-delay:2.1s;"></span>
+  <span class="mote" style="left:60%; top:8%; animation-delay:1.5s;"></span>
+  <span class="mote" style="left:33%; top:45%; animation-delay:2.7s;"></span>
+</div>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">THE LANTERN PROTOCOL · LP OFFICE</p>
+    <h1>등불 편집회로</h1>
+    <p class="tagline">원고의 서로 다른 면에 빛을 비추며 성인 단편소설을 함께 만드는 곳</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow mono">CURRENT PROJECT · CYCLE 01</p>
+      <h2>프로젝트별 집필실</h2>
+    </div>
+    <div class="project-card">
+      <div>
+        <span class="project-label">MISSION / EDITABLE PER PROJECT</span>
+        <h3>성인 단편소설 출품 프로젝트</h3>
+        <p>현재 프로젝트의 목적·독자·핵심 질문은 작품이 정해질 때마다 이곳에서 교체합니다. 공방 전체의 고정 문구가 아니라, 하나의 원고를 위한 작업 지시서입니다.</p>
+      </div>
+      <div class="package">
+        <span class="project-label">SEALED PACKAGE</span>
+        <p><span>원고</span><span>프롬프트 노트</span><span>협업 과정</span><span>개정 이력</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow mono">OPEN NOW</p>
+      <h2>지금 문을 연 방</h2>
+    </div>
+    <div class="cabinet">
+      <article class="crew-card" data-crew="planner" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/planner.jpg" alt="기획 담당 에이전트 이소진의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">이소진<span class="en">Isabella Lee</span></p>
+          <p class="crew-role">기획 담당 · 기획실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">이야기의 씨앗을 고르고 로그라인과 등장인물을 정합니다.</p>
+          <p class="niche-bio">아동문학 전공, 그림책 편집자로 6년 근무. 소재를 고를 때 "아이가 이걸 왜 궁금해할까"부터 묻는다.</p>
+          <p class="niche-stat"><span class="num">13</span>편 · 기획서 완료</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="writer" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/writer.jpg" alt="집필 담당 에이전트 최민우의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">최민우<span class="en">Noah Choi</span></p>
+          <p class="crew-role">집필 담당 · 집필실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">기획을 받아 처음부터 끝까지 완결된 이야기를 씁니다.</p>
+          <p class="niche-bio">동화 공모전 신인상 출신. 초고를 쓰고 나면 꼭 소리 내어 읽어보며 대사를 다듬는다.</p>
+          <p class="niche-stat"><span class="num">13</span>편 · 초고 완료</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="critic" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/critic.jpg" alt="심사 담당 에이전트 박미란의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">박미란<span class="en">Dr. Miran Park</span></p>
+          <p class="crew-role">심사 담당 · 심사실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">원고를 읽고 통과인지, 다시 써야 하는지 판정합니다.</p>
+          <p class="niche-bio">아동문학평론가, 아동청소년문학상 심사위원 경력. 훈계로 끝나는 결말을 가장 싫어한다.</p>
+          <p class="niche-stat"><span class="num">13</span>건 · 심사 통과</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="designer" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/designer.jpg" alt="디자인 담당 에이전트 정다은의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">정다은<span class="en">Dawn Jung</span></p>
+          <p class="crew-role">디자인 담당 · 디자인실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">표지와 삽화, 판형을 구상합니다.</p>
+          <p class="niche-bio">일러스트레이션 전공, 동화책 삽화 8권 작업 경력. 색보다 여백을 먼저 본다.</p>
+          <p class="niche-stat"><span class="num">11</span>컷 · 삽화 완료</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="researcher" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/researcher.jpg" alt="리서치 담당 에이전트 남도윤의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">남도윤<span class="en">Dylan Nam</span></p>
+          <p class="crew-role">리서치 담당 · 자료실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">국내외 인기 소재와 독자 취향을 살핍니다.</p>
+          <p class="niche-bio">출판 트렌드 뉴스레터 운영 경험. 잘 팔리는 소재보다 "이미 나온 작품과 얼마나 겹치는가"를 더 오래 본다.</p>
+          <p class="niche-stat"><span class="num">1</span>건 · 트렌드 리포트</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="marketer" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/marketer.jpg" alt="마케팅 담당 에이전트 백하늘의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">백하늘<span class="en">Skye Baek</span></p>
+          <p class="crew-role">마케팅 담당 · 홍보실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">완성작을 알릴 카피와 채널을 만듭니다.</p>
+          <p class="niche-bio">어린이 콘텐츠 브랜드 마케팅 경력. 한 줄 카피에 교훈을 직접 넣지 않는 걸 원칙으로 삼는다.</p>
+          <p class="niche-stat"><span class="num">7</span>건 · 홍보 카피 완료</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="admin" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/admin.jpg" alt="총무 담당 에이전트 조단비의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">조단비<span class="en">Danbi Cho</span></p>
+          <p class="crew-role">총무 담당 · 사무실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">공방 전체의 진행 상황을 정리합니다.</p>
+          <p class="niche-bio">제작 진행 관리(PM) 출신. 숫자가 안 맞으면 어딘가에서 뭔가 놓친 거라고 믿는다.</p>
+          <p class="niche-stat"><span class="num">1</span>건 · 점검 완료</p>
+        </div>
+      </article>
+
+      <article class="crew-card" data-crew="advisor" role="button" tabindex="0" aria-haspopup="dialog">
+        <div class="portrait"><img src="images/advisor.jpg" alt="고문 에이전트 강수연의 초상" loading="lazy"></div>
+        <div class="crew-body">
+          <p class="crew-persona">강수연<span class="en">Sue Kang</span></p>
+          <p class="crew-role">고문 (아동문학가) · 자문실</p>
+          <p class="crew-status"><span class="status-dot"></span>status: <span class="status-word">active</span></p>
+          <p class="niche-duty">문학적·인문학적 관점에서 완성작을 다시 읽고 보완점을 짚습니다.</p>
+          <p class="niche-bio">아동문학가 겸 아동심리 상담 이수. 결말의 "착함"보다 "진짜임"을 더 본다.</p>
+          <p class="niche-stat"><span class="num">13</span>건 · 문학 자문 완료</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow mono">HOW LP WORKS TOGETHER</p>
+      <h2>Lanterning의 일하는 순서</h2>
+    </div>
+    <div class="process">
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/researcher.jpg" alt="남도윤" loading="lazy"></div>
+        <div class="stage-name">채집</div>
+        <div class="stage-role">남도윤</div>
+        <div class="stage-cmd">/gather</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/planner.jpg" alt="이소진" loading="lazy"></div>
+        <div class="stage-name">기획</div>
+        <div class="stage-role">이소진</div>
+        <div class="stage-cmd">/design</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/writer.jpg" alt="최민우" loading="lazy"></div>
+        <div class="stage-name">집필</div>
+        <div class="stage-role">최민우</div>
+        <div class="stage-cmd">/draft</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/critic.jpg" alt="박미란" loading="lazy"></div>
+        <div class="stage-name">해부</div>
+        <div class="stage-role">해부자</div>
+        <div class="stage-cmd">/dissect</div>
+        <div class="loop-note">↺ 수정 필요 시<br>집필로 돌아감</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/advisor.jpg" alt="강수연" loading="lazy"></div>
+        <div class="stage-name">자문</div>
+        <div class="stage-role">강수연</div>
+        <div class="stage-cmd">/counsel</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/designer.jpg" alt="정다은" loading="lazy"></div>
+        <div class="stage-name">개정</div>
+        <div class="stage-role">개정자</div>
+        <div class="stage-cmd">/revise</div>
+      </div>
+      <div class="stage-link"></div>
+      <div class="stage">
+        <div class="stage-avatar"><img src="images/marketer.jpg" alt="백하늘" loading="lazy"></div>
+        <div class="stage-name">봉인</div>
+        <div class="stage-role">기록 관리자</div>
+        <div class="stage-cmd">/seal</div>
+      </div>
+    </div>
+
+    <div class="always-on">
+      <p class="always-title mono">상시 진행 · 순서 없음</p>
+      <div class="always-row">
+        <div class="always-item">
+          <div class="stage-avatar"><img src="images/admin.jpg" alt="조단비" loading="lazy"></div>
+          <div class="txt">
+            <span class="n">조단비 · 총무</span>
+            <span class="d">공방 전체 정합성 상시 점검 · /audit</span>
+          </div>
+        </div>
+        <div class="always-item">
+          <div class="stage-avatar"><img src="images/researcher.jpg" alt="남도윤" loading="lazy"></div>
+          <div class="txt">
+            <span class="n">남도윤 · 리서치</span>
+            <span class="d">저작권·유사성 리스크 매주 점검</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow mono">THE SHELF</p>
+      <h2>완성작 서재</h2>
+    </div>
+    <p class="shelf-note">그림책도, 삽화 없는 단편도 있어요. 대상 연령이 작품마다 다르고, 그림책 중 일부는 아직 삽화를 기다리고 있어요. (단편 2편은 공모전 출품 준비로 잠시 비공개했어요.)</p>
+    <div class="view-toggle" role="group" aria-label="서재 보기 방식">
+      <button type="button" id="viewListBtn" class="active" aria-pressed="true">목록형</button>
+      <button type="button" id="viewGridBtn" aria-pressed="false">카드형</button>
+    </div>
+    <div class="shelf" id="shelf">
+      <a class="book-entry" href="stories/반딧불이-콩콩이.html">
+        <span class="book-text">
+          <span class="book-title">반딧불이 콩콩이, 처음 불을 켜다<span class="book-tag">그림책 · 4~7세</span></span>
+          <span class="book-hook">"무서워도, 켜졌다."</span>
+          <span class="book-synopsis">불 켜는 걸 무서워하던 반딧불이 콩콩이가, 길 잃은 친구를 위해 태어나 처음으로 빛을 낸다.</span>
+          <span class="book-diff">"용기를 내"라는 말 없이, '켜졌다'는 신체적 사건 하나로 결말을 낸다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 삽화 정다은 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/욕심쟁이-다람쥐-봄이.html">
+        <span class="book-text">
+          <span class="book-title">욕심쟁이 다람쥐 봄이<span class="book-tag">그림책 · 4~7세</span><span class="book-tag">삽화 준비 중</span></span>
+          <span class="book-hook">"나눠 먹으면, 더 배부르다."</span>
+          <span class="book-synopsis">도토리를 혼자 다 모으려던 다람쥐 봄이가, 눈보라에 굶주린 이웃의 소리를 듣고 처음으로 창고 문을 연다.</span>
+          <span class="book-diff">교훈 대사 없이, '나눠 먹으니 더 배불렀다'는 감각의 반전만으로 메시지를 전한다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/느림보-거북이-콩이.html">
+        <span class="book-text">
+          <span class="book-title">느림보 거북이 콩이<span class="book-tag">그림책 · 4~7세</span><span class="book-tag">삽화 준비 중</span></span>
+          <span class="book-hook">"느려서, 더 많이 보였다."</span>
+          <span class="book-synopsis">늘 꼴찌라 속상하던 거북이 콩이가, 다들 지나친 위험을 느린 걸음 덕분에 알아채고 친구들을 구한다.</span>
+          <span class="book-diff">'노력하면 빨라진다'가 아니라 '느려도 괜찮다'는, 흔치 않은 결론을 낸다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/거짓말한-아기여우-소소.html">
+        <span class="book-text">
+          <span class="book-title">거짓말한 아기 여우 소소<span class="book-tag">그림책 · 4~7세</span><span class="book-tag">삽화 준비 중</span></span>
+          <span class="book-hook">"숨긴 것보다, 무거운 것."</span>
+          <span class="book-synopsis">친구의 모빌을 망가뜨리고 거짓말한 소소가, 애꿎은 친구가 대신 오해받는 걸 보고 용기 내 사실대로 말한다.</span>
+          <span class="book-diff">'거짓말은 나쁘다' 대신, 숨긴 것의 물리적 무게감으로 죄책감을 표현한다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/우리집-두번째-왕관.html">
+        <span class="book-text">
+          <span class="book-title">우리 집 두 번째 왕관<span class="book-tag">그림책 · 4~7세</span><span class="book-tag">삽화 준비 중</span></span>
+          <span class="book-hook">"왕관은, 두 개가 될 수 있다."</span>
+          <span class="book-synopsis">동생이 태어나 '우리 집 공주' 자리를 뺏긴 것 같던 다온이, 자지러지게 우는 동생을 스스로 달래며 자기 자리를 찾는다.</span>
+          <span class="book-diff">동생 미워하는 마음을 부정하지 않고 인정한 뒤에 화해로 나아간다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/태오의-안녕.html">
+        <span class="book-text">
+          <span class="book-title">태오의 안녕<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"말이 아니어도, 사랑은 전해진다."</span>
+          <span class="book-synopsis">발달장애가 있는 동생을 돌보느라 자기 시간이 없던 다인이, 몸져누운 어느 날 동생의 서툰 손짓에서 말 없는 사랑을 발견한다.</span>
+          <span class="book-diff">'영 케어러'를 동정이 아니라, 돌보는 아이 자신의 분노·질투까지 숨기지 않고 그린다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/할머니의-종.html">
+        <span class="book-text">
+          <span class="book-title">할머니의 종<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"아무도 몰라도, 누군가에게는 특별했다."</span>
+          <span class="book-synopsis">폐지를 모아 파는 봉자 할머니와 친해진 시우가, 할머니가 갑자기 사라진 뒤 리어카에 달린 작은 종에 담긴 마음을 알게 된다.</span>
+          <span class="book-diff">"노인을 공경하라"는 설교 없이, 이별의 서운함을 절제 없이 그대로 그린다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/삼각김밥-두-개.html">
+        <span class="book-text">
+          <span class="book-title">삼각김밥 두 개<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"혼자면 무겁고, 둘이면 가볍다."</span>
+          <span class="book-synopsis">아동급식카드 쓰는 걸 들킬까 봐 친구를 피하던 유나가, 담담히 다가와 준 친구 덕분에 부끄러움 없이 카드를 꺼낼 수 있게 된다.</span>
+          <span class="book-diff">일방적 도움이 아니라, 유나가 나중에 친구를 도와주는 상호성으로 마무리한다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/그-애는-웃지-않았다.html">
+        <span class="book-text">
+          <span class="book-title">그 애는 웃지 않았다<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"찍고 있었다, 지키려고."</span>
+          <span class="book-synopsis">단톡방 괴롭힘에 전학을 결심한 지우가, 방관자로만 보였던 반장 세아가 실은 몰래 모든 순간을 증거로 남기고 있었다는 걸 알게 된다.</span>
+          <span class="book-diff">세아를 영웅으로 그리지 않고, "그래도 말은 걸어 주지 그랬어"라는 원망까지 그대로 둔다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 고문 강수연 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/열한시의-노크.html">
+        <span class="book-text">
+          <span class="book-title">열한 시의 노크<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"위가 아니라, 아래였다."</span>
+          <span class="book-synopsis">밤마다 위층 소음에 시달리던 이든이, 그 소리의 정체가 실은 자신이 밤마다 낸 소음에 대한 아래층 친구의 응답이었다는 걸 깨닫는다.</span>
+          <span class="book-diff">반전의 화살표가 남이 아니라 화자 자신을 향하는, 이 공방 첫 자기반성형 구조.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 고문 강수연 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-entry" href="stories/아이고-또-틀렸네.html">
+        <span class="book-text">
+          <span class="book-title">아이고, 또 틀렸네<span class="book-tag">단편 · 초등 5~6학년</span></span>
+          <span class="book-hook">"가르친 줄 알았는데, 배우고 있었다."</span>
+          <span class="book-synopsis">폐교 위기 분교에서 일흔아홉 살 1학년 짝꿍을 가르치던 도현이, 할머니가 사실 이미 글을 다 알면서도 일부러 틀려 왔다는 걸 알게 된다.</span>
+          <span class="book-diff">"백 점 맞으면 니가 안 오잖여" — 잘하게 되는 것과 함께 있는 것이 정면으로 부딪힌다.</span>
+          <span class="book-meta">기획 이소진 · 집필 최민우 · 심사 박미란 · 고문 강수연 · 완결</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow mono">WEEKLY REPORTS</p>
+      <h2>업무 주간보고</h2>
+    </div>
+    <p class="shelf-note">매주 일요일 오전 6시, 8명이 그 주에 각자 실제로 한 일(또는 안 한 일)을 정리해서 올립니다. 없는 일을 지어내지 않습니다.</p>
+    <div class="shelf" id="reportShelf">
+      <div class="book-entry report-entry">
+        <a class="book-text-link" href="reports/2026-08-30.html">
+          <span class="book-text">
+            <span class="book-title">2026년 8월 30일 주간보고</span>
+            <span class="book-hook">"공모전용 단편 3편, 기획부터 자문까지 하루 만에."</span>
+            <span class="book-meta">이소진 · 최민우 · 박미란 · 정다은 · 남도윤 · 백하늘 · 조단비 · 강수연</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="slide-btn" href="reports/2026-08-30.html#slides" title="슬라이드로 보기" aria-label="슬라이드로 보기">🎬</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <p>이 공방은 아직 정해진 근무시간표가 없습니다. 사람이 슬래시 커맨드로 방문을 두드려야 방에 불이 켜집니다 — 자동으로 돌아가는 것처럼 꾸미지 않습니다.</p>
+    <div class="links">
+      <a href="https://github.com/heekeunlee/fairy_tale_office" target="_blank" rel="noopener">이 공방의 도면 →</a>
+      <a href="https://github.com/heekeunlee/ai_crew" target="_blank" rel="noopener">공방 구조에 영감을 준 ai_crew →</a>
+      <span class="stamp">2026-08-27 · 처음 문을 열다</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="personnel-modal" id="personnelModal" hidden role="dialog" aria-modal="true" aria-labelledby="personnelName">
+  <div class="personnel-card">
+    <button type="button" class="personnel-close" id="personnelClose" aria-label="닫기">✕</button>
+    <p class="personnel-eyebrow">인사기록카드</p>
+    <div class="personnel-head">
+      <img class="personnel-photo" id="personnelPhoto" src="" alt="">
+      <div class="personnel-headtext">
+        <span class="personnel-name" id="personnelName"></span>
+        <span class="personnel-en" id="personnelEn"></span>
+        <span class="personnel-role" id="personnelRole"></span>
+        <span class="personnel-engine" id="personnelEngine"></span>
+      </div>
+    </div>
+    <div class="personnel-field">
+      <span class="label">학력</span>
+      <ul id="personnelEdu"></ul>
+    </div>
+    <div class="personnel-field">
+      <span class="label">경력</span>
+      <ul id="personnelCareer"></ul>
+    </div>
+    <div class="personnel-field">
+      <span class="label">취미</span>
+      <p id="personnelHobby"></p>
+    </div>
+    <div class="personnel-field">
+      <span class="label">특기</span>
+      <p id="personnelSpecialty"></p>
+    </div>
+    <p class="personnel-foot">이 기록은 캐릭터 설정입니다 — 실제로는 전부 같은 Claude 모델이 맡은 역할입니다.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var shelf = document.getElementById('shelf');
+  var listBtn = document.getElementById('viewListBtn');
+  var gridBtn = document.getElementById('viewGridBtn');
+  var KEY = 'fairy-tale-office-shelf-view';
+
+  function setView(view) {
+    if (view === 'grid') {
+      shelf.classList.add('view-grid');
+      gridBtn.classList.add('active'); gridBtn.setAttribute('aria-pressed', 'true');
+      listBtn.classList.remove('active'); listBtn.setAttribute('aria-pressed', 'false');
+    } else {
+      shelf.classList.remove('view-grid');
+      listBtn.classList.add('active'); listBtn.setAttribute('aria-pressed', 'true');
+      gridBtn.classList.remove('active'); gridBtn.setAttribute('aria-pressed', 'false');
+    }
+    try { localStorage.setItem(KEY, view); } catch (e) {}
+  }
+
+  listBtn.addEventListener('click', function () { setView('list'); });
+  gridBtn.addEventListener('click', function () { setView('grid'); });
+
+  var saved = 'list';
+  try { saved = localStorage.getItem(KEY) || 'list'; } catch (e) {}
+  setView(saved);
+})();
+
+(function () {
+  var PERSONNEL = {
+    planner: {
+      name: '이소진', en: 'Isabella Lee', role: '기획 담당 · 기획실', photo: 'images/planner.jpg',
+      engine: '모델: 오퍼스 · 도구: Read · Write · Glob · Grep',
+      edu: ['국어국문학과 졸업', '대학원 아동청소년문학 전공 수료'],
+      career: [
+        '기획서 쓰기 전 planning/ 전체를 훑어 소재·교훈 중복부터 확인',
+        '로그라인·타겟 연령·등장인물·5~8비트 줄거리까지, 작가가 바로 쓸 수 있는 수준으로 명세'
+      ],
+      hobby: '헌책방 순례, 오래된 그림책 수집',
+      specialty: '교훈을 대사로 직접 설명하지 않고 장면과 감정선으로 설계하기'
+    },
+    writer: {
+      name: '최민우', en: 'Noah Choi', role: '집필 담당 · 집필실', photo: 'images/writer.jpg',
+      engine: '모델: 소넷(기본) · 도구: Read · Write · Glob',
+      edu: ['문예창작학과 졸업'],
+      career: [
+        '집필 전 이전 초고·심사 피드백을 먼저 읽고 반영하는 원칙 고수',
+        '대상 연령대별로 문장 길이·어휘 수준을 구분해 집필 (유아: 반복구·의성어 / 어린이: 대화 중심)'
+      ],
+      hobby: '밤 산책하며 대사 중얼거리기',
+      specialty: '교훈을 사건과 행동으로만 드러내고 결말에서 설교하지 않기'
+    },
+    critic: {
+      name: '박미란', en: 'Dr. Miran Park', role: '심사 담당 · 심사실', photo: 'images/critic.jpg',
+      engine: '모델: 오퍼스 · 도구: Read · Write · Glob',
+      edu: ['아동문학 박사'],
+      career: [
+        '연령 적합성·구성·문체·메시지 전달력·독창성 5개 기준으로 심사',
+        '판정은 통과 / 수정 필요 / 전면 재기획 필요 중 하나로만 명확히'
+      ],
+      hobby: '지난 심사평 다시 읽어보기',
+      specialty: '"더 재미있게" 대신 "3번째 장면에 갈등을 한 단계 추가하라"는 식의 실행 가능한 지적'
+    },
+    designer: {
+      name: '정다은', en: 'Dawn Jung', role: '디자인 담당 · 디자인실', photo: 'images/designer.jpg',
+      engine: '모델: 소넷(기본) · 도구: Read · Write · Glob · Bash',
+      edu: ['시각디자인과 졸업'],
+      career: [
+        '반딧불이 콩콩이의 SVG 스프라이트 방식을 새 작품에도 일관되게 적용',
+        '"삽화 준비 중" 작품을 한 번에 다 하지 않고 한 편씩 완료해 커밋'
+      ],
+      hobby: '색연필 드로잉, 미술관 나들이',
+      specialty: '실사 인물 사진처럼 없는 능력은 있는 척하지 않고, 참고 이미지 요청이나 일러스트로 대체하기'
+    },
+    researcher: {
+      name: '남도윤', en: 'Dylan Nam', role: '리서치 담당 · 자료실', photo: 'images/researcher.jpg',
+      engine: '모델: 소넷(기본) · 도구: WebSearch · WebFetch · Read · Write · Glob',
+      edu: ['미디어커뮤니케이션 전공'],
+      career: [
+        '소재 트렌드 조사와 저작권·유사성 주간 점검, 두 업무를 겸함',
+        '리스크는 낮음/중간/높음으로만 판정, "확인 못함"은 지어내지 않고 그대로 표시'
+      ],
+      hobby: '신간 코너 훑어보기',
+      specialty: '리스크 "높음"이 나오면 스스로 결론 내지 않고 실제 법률 자문을 받으라고 권고하기'
+    },
+    marketer: {
+      name: '백하늘', en: 'Skye Baek', role: '마케팅 담당 · 홍보실', photo: 'images/marketer.jpg',
+      engine: '모델: 소넷(기본) · 도구: Read · Write · Glob',
+      edu: ['광고홍보학과 졸업'],
+      career: [
+        '통과작마다 한 줄 후크·홍보 문단·추천 대상을 marketing/{제목슬러그}.md로 정리',
+        '승인된 범위 안에서는 서재 항목에 후크를 직접 반영'
+      ],
+      hobby: '좋은 카피 모아두기',
+      specialty: '결말 스포일러 없이, 과장 없이 쓰기 — 안 우는 결말에 "눈물 폭탄" 같은 말 안 씀'
+    },
+    admin: {
+      name: '조단비', en: 'Danbi Cho', role: '총무 담당 · 사무실', photo: 'images/admin.jpg',
+      engine: '모델: 소넷(기본) · 도구: Read · Write · Glob · Grep · Bash',
+      edu: ['경영학과 졸업'],
+      career: [
+        '기획서-초고-심사 정합성과 파일 명명 규칙 위반을 점검',
+        '오피스 크루 스탯·서재 목록이 실제 완결작 수와 일치하는지 대조'
+      ],
+      hobby: '체크리스트 만들기',
+      specialty: '오타처럼 명백한 건 직접 고치고, "서재에 올릴지" 같은 판단은 사람 몫으로 넘기기'
+    },
+    advisor: {
+      name: '강수연', en: 'Sue Kang', role: '고문 (아동문학가) · 자문실', photo: 'images/advisor.jpg',
+      engine: '모델: 오퍼스 · 도구: Read · Write · Glob',
+      edu: ['아동문학 전공', '아동심리상담사 자격 이수'],
+      career: [
+        '문학적 완성도·아동 심리 발달·인문학적 함의·완결성, 네 관점에서 재검토',
+        '심사위원과 다른 질문에 답함 — "기획대로 잘 만들었는가"가 아니라 "좋은 문학이고 아이에게 좋은가"'
+      ],
+      hobby: '아이들 인터뷰하며 진짜 생각 듣기',
+      specialty: '트집을 위한 트집은 잡지 않고, 종합 의견을 "이대로 좋음/보완 권장/재검토 필요"로만 냄'
+    }
+  };
+
+  var modal = document.getElementById('personnelModal');
+  var closeBtn = document.getElementById('personnelClose');
+  var lastFocused = null;
+
+  function fillList(el, items) {
+    el.innerHTML = '';
+    items.forEach(function (t) {
+      var li = document.createElement('li');
+      li.textContent = t;
+      el.appendChild(li);
+    });
+  }
+
+  function openPersonnel(key) {
+    var p = PERSONNEL[key];
+    if (!p) return;
+    document.getElementById('personnelPhoto').src = p.photo;
+    document.getElementById('personnelPhoto').alt = p.name + '의 초상';
+    document.getElementById('personnelName').textContent = p.name;
+    document.getElementById('personnelEn').textContent = p.en;
+    document.getElementById('personnelRole').textContent = p.role;
+    document.getElementById('personnelEngine').textContent = p.engine;
+    fillList(document.getElementById('personnelEdu'), p.edu);
+    fillList(document.getElementById('personnelCareer'), p.career);
+    document.getElementById('personnelHobby').textContent = p.hobby;
+    document.getElementById('personnelSpecialty').textContent = p.specialty;
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePersonnel() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.crew-card[data-crew]').forEach(function (card) {
+    card.addEventListener('click', function () { openPersonnel(card.getAttribute('data-crew')); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPersonnel(card.getAttribute('data-crew')); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closePersonnel);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closePersonnel(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closePersonnel();
+  });
+})();
+</script>
+</body>
+</html>
