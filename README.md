@@ -1,32 +1,45 @@
-# fairy_tale_office
+# LP Office — The Lantern Protocol
 
-`fairy_tale` 크루(창작동화 제작 에이전트들)가 일하는 모습을 보여주는 오피스 화면입니다.
+원고를 일곱 단계의 편집 회로에 통과시키는 AI 협업 집필실입니다.
 
-**공방**: https://heekeunlee.github.io/fairy_tale_office/
+**공방**: https://jgjeong730.github.io/bookshelf1/
 
-## 콘셉트
+## Lanterning
 
-[ai_crew](https://github.com/heekeunlee/ai_crew)의 "오피스" 아이디어에서 출발했지만,
-2D 픽셀 캐릭터 대신 **촛불 켜진 목재 공방의 벽장(니치) 캐비닛**으로 다시 그렸습니다.
-각 에이전트는 자리가 아니라 자신을 상징하는 도구(컴퍼스, 깃펜, 봉랍 등)로 표현됩니다.
+`The Lantern Protocol (LP)`는 하나의 원고를 서로 다른 편집 관점으로 비추는
+**Seven-Stage Editorial Circuit**입니다.
 
-- **지금 문을 연 방** — 실제로 존재하는 에이전트 3명(기획자·작가·심사위원). 촛불이 켜져 있습니다.
-- **다음에 합류할 이웃들** — 아직 만들지 않은 역할(트렌드 리서처·북디자이너·마케터·총무). 흐릿하게 "준비 중"으로 표시됩니다.
-- **일하는 순서** — `/plan → /write → /review` 흐름.
+```text
+Gather → Design → Draft → Dissect → Counsel → Revise → Seal
+```
 
-## 지금은 반자동입니다
+`Dissect → Counsel → Revise`는 원고가 충분히 좋아질 때까지 반복합니다.
 
-`fairy_tale` 본체는 아직 GitHub Actions로 자동 근무하지 않습니다. 사람이 맥미니에서
-Claude Code 슬래시 커맨드(`/plan`, `/write`, `/review`)를 직접 실행해야 이야기가 진행됩니다.
-그래서 이 화면은 실시간 근무 상태를 보여주는 대시보드가 아니라, **크루 구성과 진행 방식을
-보여주는 정적인 안내판**입니다. 없는 사실(실시간 자동 근무)을 지어내지 않습니다.
+## 목적
+
+성인 단편소설 공모전에 제출할 원고를 만들면서 다음 세 가지를 함께 증명합니다.
+
+- 문학적 완성도 (50%)
+- AI 활용의 독창성 및 협업 과정 (30%)
+- 대중성 및 확장 가능성 (20%)
+
+최종 제출물에는 원고와 함께 프롬프트 노트, 역할별 산출물, 초고부터 개정까지의
+버전 이력을 보존합니다.
+
+## 협업 원칙
+
+LP Office는 현재 실시간 에이전트 실행을 가장하지 않습니다. 사람이 각 단계를 검토하고
+다음 단계로 넘기는 협업 설계와 기록 보드입니다. AI는 이야기를 대신 결정하지 않고,
+서로 다른 편집 관점으로 원고를 비추는 역할을 수행합니다.
 
 ## 구조
 
-```
+```text
 site/
-  index.html    오피스 화면 (정적 HTML, 외부 JS 의존성 없음)
+  index.html    LP Office 화면 (정적 HTML, 외부 JS 의존성 없음)
   .nojekyll     GitHub Pages가 Jekyll로 처리하지 않도록
+  stories/      기존 이야기 아카이브
+  reports/      기존 협업 기록
 .github/workflows/
   pages.yml     site/ 를 GitHub Pages로 배포
 ```
@@ -37,8 +50,10 @@ site/
 cd site && python3 -m http.server 8080
 ```
 
-## 앞으로
+## 출품 패키지
 
-`fairy_tale` 본체에 트렌드 리서처·북디자이너·마케터·총무 에이전트가 추가되고,
-실제 진행 상황(기획서/초고/심사 건수)을 자동으로 반영할 방법이 생기면
-이 화면도 그 데이터를 실제로 읽어오도록 업데이트할 예정입니다.
+- 단편소설 원고: 200자 원고지 50~100매
+- 로그라인·기획 의도·인물·시놉시스
+- 역할별 프롬프트와 산출물
+- 초고 → 해부 → 자문 → 개정 이력
+- AI와 창작자가 각각 결정한 내용의 기록
