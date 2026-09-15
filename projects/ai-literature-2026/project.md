@@ -2,7 +2,7 @@
 
 ## Project brief
 
-- 상태: Draft v1 완료 · Dissect 대기
+- 상태: Dissect v1 완료 · Counsel 대기
 - 장르: 단편소설
 - 독자: 성인
 - 목표 분량: 200자 원고지 50~100매
