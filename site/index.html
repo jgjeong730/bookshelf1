@@ -75,9 +75,11 @@
   .tagline { margin: 0; color: var(--muted-paper); font-size: 1rem; max-width: 32rem; text-wrap: balance; }
 
   section { display: flex; flex-direction: column; gap: 1.4rem; }
-  .masthead { order: -2; }
-  .crew-section { order: -1; }
-  .workspace-section { order: 1; }
+  .page > .masthead { order: 0; }
+  .page > .crew-section { order: 1; }
+  .page > .protocol-section { order: 2; }
+  .page > .shelf-section { order: 3; }
+  .page > .workspace-section { order: 4; }
   .section-head { display: flex; flex-direction: column; gap: .3rem; text-align: center; }
   .section-head h2 {
     font-family: "Gowun Batang", serif; font-weight: 700; margin: 0;
@@ -526,7 +528,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="protocol-section">
     <div class="section-head">
       <p class="eyebrow mono">THE LANTERN PROTOCOL · HOW LANTERNING WORKS</p>
       <h2>Lanterning의 일하는 순서</h2>
@@ -624,7 +626,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="shelf-section">
     <div class="section-head">
       <p class="eyebrow mono">THE SHELF</p>
       <h2>완성작 서재</h2>
