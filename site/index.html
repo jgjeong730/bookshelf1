@@ -234,10 +234,11 @@
   .personnel-foot { text-align: center; font-size: .72rem; color: #8A7A5C; font-style: italic; margin: .2rem 0 0; }
 
   .process {
-    display: flex; align-items: center; justify-content: center;
-    gap: 0; flex-wrap: wrap; padding: .5rem 0;
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    gap: 0; flex-wrap: nowrap; padding: .5rem 0 1rem;
+    overflow-x: auto; scrollbar-color: var(--brass) transparent; scrollbar-width: thin;
   }
-  .stage { display: flex; flex-direction: column; align-items: center; gap: .4rem; width: 8.5rem; }
+  .stage { display: flex; flex: 0 0 7.2rem; flex-direction: column; align-items: center; gap: .4rem; }
   .stage-dot {
     width: 2.6rem; height: 2.6rem; border-radius: 50%;
     background: var(--wood-light); border: 1px solid var(--hairline);
@@ -250,12 +251,10 @@
     background: rgba(200,154,76,.12); padding: .15rem .55rem; border-radius: .3rem;
   }
   .stage-link {
-    flex: 0 0 2.4rem; height: 1px; background: repeating-linear-gradient(90deg, var(--hairline) 0 6px, transparent 6px 11px);
+    flex: 0 0 1.35rem; height: 1px; background: repeating-linear-gradient(90deg, var(--hairline) 0 5px, transparent 5px 9px);
     margin: 0 -.2rem; align-self: flex-start; margin-top: 1.7rem;
   }
-  @media (max-width: 620px) {
-    .stage-link { display: none; }
-  }
+  @media (max-width: 620px) { .process { justify-content: flex-start; } .stage-link { display: block; } }
   .stage-avatar {
     width: 3.4rem; height: 3.4rem; border-radius: 50%; overflow: hidden;
     border: 2px solid var(--brass); flex: none;
