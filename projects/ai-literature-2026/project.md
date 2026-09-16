@@ -2,7 +2,7 @@
 
 ## Project brief
 
-- 상태: Reader v2 완료 · Seal 전 작가 최종 검토
+- 상태: SEALED · Lantern Cycle 01 완료
 - 장르: 단편소설
 - 독자: 독자
 - 목표 분량: 200자 원고지 50~100매
