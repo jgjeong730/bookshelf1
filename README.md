@@ -14,6 +14,20 @@ Gather → Design → Draft → Dissect → Counsel → Revise → Seal
 
 `Dissect → Counsel → Revise`는 원고가 충분히 좋아질 때까지 반복합니다.
 
+### 단계별 담당
+
+| 단계 | 담당자 | 역할 |
+|---|---|---|
+| Gather · 채집 | 강민재 (Min Jae Kang) · Researcher | 소재·자료·사실성·유사성 확인 |
+| Design · 기획 | 서윤아 (Mira Seo) · Planner | 핵심 질문·독자·서사 방향 설계 |
+| Draft · 집필 | 한도겸 (Theo Han) · Writer | 기획을 장면과 문장으로 전환 |
+| Dissect · 해부 | 윤채린 (Clara Yoon) · Dissector | 구조·인물·문체의 문제 분석 |
+| Counsel · 자문 | 이서현 (Sora Lee) · Counsel | 문학성·윤리성·완결성 자문 |
+| Revise · 개정 | 이도현 (Daniel Lee) · Reviser | 승인된 진단을 개정 원고로 반영 |
+| Seal · 봉인 | 문하진 (Hazel Moon) · Archivist | 최종 원고·버전·협업 기록 보존 |
+
+오유진 (Yujin Oh) · Reader는 초고와 개정본을 읽고 독자 경험·대중성·확장 가능성을 점검하는 상시 독자 게이트입니다.
+
 ## 역할
 
 - Planner: 질문·독자·서사 방향 설계
