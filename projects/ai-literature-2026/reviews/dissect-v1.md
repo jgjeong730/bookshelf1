@@ -1,4 +1,4 @@
-# 「유품 목록」 — Dissect v1
+# 《그건 나중에》 — Dissect v1
 
 담당 역할: Dissector
 검토 대상: `drafts/cycle-01-v1.md`

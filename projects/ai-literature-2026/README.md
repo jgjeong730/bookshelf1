@@ -1,4 +1,4 @@
-# Project 01 — 「유품 목록」
+# Project 01 — 《그건 나중에》
 
 이 폴더는 Project 01의 Lantern Cycle 작업실입니다.
 

@@ -2,7 +2,7 @@
 
 ## 최종 상태
 
-- 작품: 「유품 목록」
+- 작품: 《그건 나중에》
 - 작가: Someday_
 - 상태: **SEALED**
 - 최종 파일: `submission/final-manuscript.md`

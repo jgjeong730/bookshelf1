@@ -4,7 +4,7 @@
 
 ## 제출 파일
 
-- [최종 원고 — 「유품 목록」](final-manuscript.md)
+- [최종 원고 — 《그건 나중에》](final-manuscript.md)
 - [AI 협업 과정 기록](ai-collaboration-note.md)
 - [Lantern Cycle 기록](../logs/cycle-01-index.md)
 

@@ -1,4 +1,4 @@
-# 「유품 목록」 — Locked Design
+# 《그건 나중에》 — Locked Design
 
 작성 역할: Planner
 승인 상태: 인간 승인 완료

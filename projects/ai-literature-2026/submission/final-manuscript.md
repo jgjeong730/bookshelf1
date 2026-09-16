@@ -1,4 +1,4 @@
-# 유품 목록
+# 그건 나중에
 
 *Lantern Cycle 01 · Draft v2 · Someday_ 개정 / 이도현(Reviser) 서포트*
 

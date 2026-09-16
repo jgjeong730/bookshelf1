@@ -1,4 +1,4 @@
-# 「유품 목록」 — Reader v2
+# 《그건 나중에》 — Reader v2
 
 담당 역할: Reader · 오유진 (Yujin Oh)
 검토 대상: `drafts/cycle-01-v2.md`

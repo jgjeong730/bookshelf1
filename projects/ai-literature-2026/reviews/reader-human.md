@@ -1,4 +1,4 @@
-# 「유품 목록」 — Human Reader Review
+# 《그건 나중에》 — Human Reader Review
 
 검토자: 창작자
 검토 대상: `drafts/cycle-01-v1.md`

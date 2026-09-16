@@ -1,4 +1,4 @@
-# 「유품 목록」 — Counsel v1
+# 《그건 나중에》 — Counsel v1
 
 담당 역할: Counsel
 검토 대상: `drafts/cycle-01-v1.md`, `reviews/dissect-v1.md`, `reviews/reader-human.md`
