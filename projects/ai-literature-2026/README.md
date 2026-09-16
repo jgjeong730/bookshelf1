@@ -21,3 +21,5 @@
 `Gather → Design → Draft → Dissect → Counsel → Revise → Seal`
 
 이번 프로젝트의 다음 단계는 `Revise`이며, 담당자는 **이도현 (Daniel Lee) · Reviser**입니다.
+
+단, 이도현은 개정 방향과 문장 대안을 제안하는 서포트 역할입니다. 작가는 **JG님**이며, 최종 개정·채택·삭제 결정도 JG님이 합니다.

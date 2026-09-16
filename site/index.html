@@ -262,6 +262,8 @@
   }
   .stage-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .stage-role { font-size: .66rem; color: var(--muted-paper); margin-top: -.3rem; }
+  .stage-owner { font-size: .64rem; color: var(--brass-bright); text-align: center; line-height: 1.35; min-height: 1.7em; }
+  .stage-output { font-size: .62rem; color: var(--muted-paper); text-align: center; line-height: 1.35; max-width: 8.5rem; }
   .loop-note {
     font-size: .66rem; color: var(--signal); text-align: center; margin-top: .2rem;
     max-width: 9rem; line-height: 1.4;
@@ -279,6 +281,9 @@
   .always-item .txt { display: flex; flex-direction: column; text-align: left; }
   .always-item .txt .n { font-size: .82rem; font-weight: 500; color: var(--paper-ink); }
   .always-item .txt .d { font-size: .7rem; color: var(--muted-paper); }
+  .author-note { margin: 1.4rem auto 0; max-width: 52rem; padding: 1rem 1.2rem; border: 1px solid rgba(200,154,76,.35); border-radius: .7rem; background: rgba(200,154,76,.08); text-align: center; }
+  .author-note strong { color: var(--brass-bright); }
+  .author-note p { margin: .25rem 0; color: var(--paper-ink); font-size: .78rem; line-height: 1.6; }
 
   .shelf-note { margin: 0; text-align: center; font-size: .8rem; color: var(--muted-paper); }
   .project-card {
@@ -527,11 +532,14 @@
       <p class="eyebrow mono">HOW LANTERNING WORKS</p>
       <h2>Lanterning의 일하는 순서</h2>
     </div>
+    <p class="shelf-note">JG님이 작가이자 최종 결정자입니다. 각 에이전트는 원고를 대신 쓰거나 확정하지 않고, 다음 판단을 위한 결과물을 제공합니다.</p>
     <div class="process">
       <div class="stage">
         <div class="stage-avatar"><img src="images/lp-researcher.png" alt="강민재" loading="lazy"></div>
         <div class="stage-name">채집</div>
         <div class="stage-role">강민재</div>
+        <div class="stage-owner">AI 지원</div>
+        <div class="stage-output">소재·자료·질문</div>
         <div class="stage-cmd">/gather</div>
       </div>
       <div class="stage-link"></div>
@@ -539,6 +547,8 @@
         <div class="stage-avatar"><img src="images/lp-planner.png" alt="서윤아" loading="lazy"></div>
         <div class="stage-name">기획</div>
         <div class="stage-role">서윤아</div>
+        <div class="stage-owner">AI 지원 → JG 승인</div>
+        <div class="stage-output">기획서·설계안</div>
         <div class="stage-cmd">/design</div>
       </div>
       <div class="stage-link"></div>
@@ -546,6 +556,8 @@
         <div class="stage-avatar"><img src="images/lp-writer.png" alt="한도겸" loading="lazy"></div>
         <div class="stage-name">집필</div>
         <div class="stage-role">한도겸</div>
+        <div class="stage-owner">JG 집필 · AI 지원</div>
+        <div class="stage-output">초고 v1</div>
         <div class="stage-cmd">/draft</div>
       </div>
       <div class="stage-link"></div>
@@ -553,6 +565,8 @@
         <div class="stage-avatar"><img src="images/lp-dissector.png" alt="윤채린" loading="lazy"></div>
         <div class="stage-name">해부</div>
         <div class="stage-role">윤채린</div>
+        <div class="stage-owner">AI 검토 → JG 판단</div>
+        <div class="stage-output">문제·수정 우선순위</div>
         <div class="stage-cmd">/dissect</div>
         <div class="loop-note">↺ 수정 필요 시<br>집필로 돌아감</div>
       </div>
@@ -561,6 +575,8 @@
         <div class="stage-avatar"><img src="images/lp-counsel.png" alt="이서현" loading="lazy"></div>
         <div class="stage-name">자문</div>
         <div class="stage-role">이서현</div>
+        <div class="stage-owner">AI 자문 → JG 판단</div>
+        <div class="stage-output">보완·유지 의견</div>
         <div class="stage-cmd">/counsel</div>
       </div>
       <div class="stage-link"></div>
@@ -568,6 +584,8 @@
         <div class="stage-avatar"><img src="images/lp-reviser.png" alt="이도현" loading="lazy"></div>
         <div class="stage-name">개정</div>
         <div class="stage-role">이도현</div>
+        <div class="stage-owner">JG 개정 · AI 서포트</div>
+        <div class="stage-output">개정 원고 v2</div>
         <div class="stage-cmd">/revise</div>
       </div>
       <div class="stage-link"></div>
@@ -575,8 +593,15 @@
         <div class="stage-avatar"><img src="images/lp-archivist.png" alt="문하진" loading="lazy"></div>
         <div class="stage-name">봉인</div>
         <div class="stage-role">문하진</div>
+        <div class="stage-owner">JG 최종 승인</div>
+        <div class="stage-output">출품·보존 패키지</div>
         <div class="stage-cmd">/seal</div>
       </div>
+    </div>
+
+    <div class="author-note">
+      <p><strong>작가 = JG님</strong> · 에이전트는 기획·집필·검토·개정을 돕는 협업자입니다.</p>
+      <p>특히 Revise에서는 이도현이 개정안을 제안하고, JG님이 직접 고쳐 쓰며 채택 여부를 결정합니다.</p>
     </div>
 
     <div class="always-on">
