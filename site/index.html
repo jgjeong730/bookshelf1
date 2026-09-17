@@ -182,10 +182,10 @@
     text-align: center; padding: 1.8rem 0 .5rem; opacity: 0; transition: opacity .18s ease; pointer-events: none;
   }
   .crew-card:hover .portrait::after, .crew-card:focus-visible .portrait::after { opacity: 1; }
-  .crew-card .portrait { width: 100%; aspect-ratio: 480 / 418; overflow: hidden; background: var(--wood); }
+  .crew-card .portrait { width: 100%; aspect-ratio: 480 / 370; overflow: hidden; background: var(--wood); }
   .crew-card .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .crew-card .crew-body {
-    padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; text-align: center;
+    padding: .75rem .9rem 1rem; display: flex; flex-direction: column; gap: .25rem; text-align: center;
   }
   .crew-persona { font-family: "Maru Buri", serif; font-weight: 600; font-size: 1.08rem; margin: 0; }
   .crew-persona .en {
@@ -262,6 +262,7 @@
     margin: 0 -.2rem; align-self: flex-start; margin-top: 1.7rem;
   }
   @media (max-width: 620px) { .process { justify-content: flex-start; } .stage-link { display: block; } }
+  @media (max-width: 620px) { .book-entry { min-height: 0; align-items: flex-start; padding: 1.3rem 1rem; } .book-entry .book-tag { display: inline-block; margin: .45rem 0 0; } .book-entry .arrow { font-size: 1.2rem; } }
   .stage-avatar {
     width: 3.4rem; height: 3.4rem; border-radius: 50%; overflow: hidden;
     border: 2px solid var(--brass); flex: none;
@@ -334,30 +335,34 @@
   .shelf.view-grid .arrow { align-self: flex-end; margin-top: -1.6rem; }
   .book-entry {
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    background: linear-gradient(90deg, var(--wood-light), var(--wood));
-    border-left: 4px solid var(--brass);
-    border-radius: .4rem;
-    padding: 1rem 1.3rem;
+    background: radial-gradient(ellipse at 12% 0%, rgba(196,154,89,.2), transparent 48%), linear-gradient(110deg, #263c5b, #17243a 68%);
+    border: 1px solid rgba(241,207,130,.3); border-left: 6px solid var(--brass-bright);
+    border-radius: .9rem;
+    padding: clamp(1.5rem, 4vw, 2.7rem);
+    min-height: 17rem;
+    box-shadow: 0 1.5rem 3rem -1.4rem rgba(0,0,0,.65), inset 0 1px rgba(255,255,255,.04);
     text-decoration: none; color: var(--paper-ink);
-    transition: background .2s ease;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
   }
-  .book-entry:hover, .book-entry:focus-visible { background: linear-gradient(90deg, var(--wood), var(--wood-light)); }
-  .book-entry .book-text { display: flex; flex-direction: column; gap: .25rem; }
-  .book-entry .book-title { font-family: "Maru Buri", serif; font-weight: 700; font-size: 1.25rem; }
+  .book-entry:hover, .book-entry:focus-visible { background: radial-gradient(ellipse at 12% 0%, rgba(196,154,89,.25), transparent 48%), linear-gradient(110deg, #2d4568, #19263d 68%); transform: translateY(-.18rem); box-shadow: 0 1.8rem 3.5rem -1.4rem rgba(0,0,0,.72); }
+  .book-entry .book-text { display: flex; flex-direction: column; gap: .55rem; max-width: 54rem; }
+  .book-entry .book-title { font-family: "Maru Buri", serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.25; }
   .book-entry .book-meta { font-family: "IBM Plex Mono", monospace; font-size: .7rem; color: var(--muted-paper); letter-spacing: .03em; }
-  .book-entry .book-hook { font-family: "Maru Buri", serif; font-style: italic; font-size: .9rem; color: var(--brass-bright); }
+  .book-entry .book-hook { font-family: "Maru Buri", serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--brass-bright); margin-top: .25rem; }
   .book-entry .book-tag {
     font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .04em;
     color: var(--brass-bright); background: rgba(200,154,76,.16); padding: .1rem .5rem;
     border-radius: 999px; margin-left: .5rem;
   }
-  .book-entry .arrow { color: var(--brass-bright); font-size: 1.2rem; flex: none; }
-  .book-entry .book-synopsis { font-family: "Pretendard", sans-serif; font-size: .88rem; color: var(--paper-ink); line-height: 1.7; opacity: .92; }
+  .book-entry .arrow { color: var(--brass-bright); font-size: 1.7rem; flex: none; }
+  .book-entry .book-synopsis { font-family: "Pretendard", sans-serif; font-size: .96rem; color: var(--paper-ink); line-height: 1.8; opacity: .92; }
   .book-entry .book-diff { font-family: "Pretendard", sans-serif; font-size: .78rem; color: var(--brass-bright); line-height: 1.5; }
   .book-entry .book-diff::before { content: "차별점 · "; font-family: "IBM Plex Mono", monospace; color: var(--brass); }
   .shelf.view-grid .book-synopsis { color: #4A3B26; }
   .shelf.view-grid .book-diff { color: var(--signal); }
   .shelf.view-grid .book-diff::before { color: #8A7A5C; }
+  .shelf-section > .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); }
+  .shelf-section > .shelf-note { font-size: .86rem; }
   .book-text-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; text-decoration: none; color: inherit; flex: 1; min-width: 0; }
   .report-entry { gap: .6rem; }
   .report-entry .slide-btn {
