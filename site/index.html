@@ -177,7 +177,7 @@
   .crew-card .portrait { position: relative; isolation: isolate; }
   .crew-card .portrait::before {
     content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-    background: rgba(16,24,39,.2); transition: background .38s ease;
+    background: rgba(16,24,39,.18); transition: background .42s ease;
   }
   .crew-card .portrait::after {
     content: "인사기록 보기 →"; position: absolute; left: 0; right: 0; bottom: 0;
@@ -186,17 +186,25 @@
     z-index: 2; text-align: center; padding: 1.8rem 0 .5rem; opacity: 0; transition: opacity .18s ease; pointer-events: none;
   }
   .crew-card:hover .portrait::after, .crew-card:focus-visible .portrait::after { opacity: 1; }
-  .crew-card .portrait { width: 100%; aspect-ratio: 480 / 370; overflow: hidden; background: var(--wood); }
+  .crew-card .portrait { width: 100%; aspect-ratio: 480 / 320; overflow: hidden; background: var(--wood); }
   .crew-card .portrait img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    filter: brightness(.88) saturate(.82); transition: filter .38s ease;
+    width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block;
+    filter: brightness(.72) saturate(.55) contrast(.92); transition: filter .42s ease;
   }
+  .crew-card[data-crew="planner"] .portrait img { object-position: center 12%; }
+  .crew-card[data-crew="writer"] .portrait img { object-position: center 10%; }
+  .crew-card[data-crew="critic"] .portrait img { object-position: center 14%; }
+  .crew-card[data-crew="designer"] .portrait img { object-position: center 8%; }
+  .crew-card[data-crew="researcher"] .portrait img { object-position: center 12%; }
+  .crew-card[data-crew="marketer"] .portrait img { object-position: center 10%; }
+  .crew-card[data-crew="admin"] .portrait img { object-position: center 12%; }
+  .crew-card[data-crew="advisor"] .portrait img { object-position: center 13%; }
   @media (hover: hover) and (pointer: fine) {
-    .crew-card:hover .portrait img, .crew-card:focus-visible .portrait img { filter: brightness(1.02) saturate(1.04); }
+    .crew-card:hover .portrait img, .crew-card:focus-visible .portrait img { filter: brightness(.92) saturate(.9) contrast(1); }
     .crew-card:hover .portrait::before, .crew-card:focus-visible .portrait::before { background: rgba(16,24,39,.04); }
   }
   @media (pointer: coarse) {
-    .crew-card .portrait img { filter: brightness(.94) saturate(.9); }
+    .crew-card .portrait img { filter: brightness(.84) saturate(.72) contrast(.96); }
     .crew-card .portrait::before { background: rgba(16,24,39,.1); }
   }
   .crew-card .crew-body {
