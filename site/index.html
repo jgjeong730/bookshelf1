@@ -311,9 +311,13 @@
   .always-item .txt { display: flex; flex-direction: column; text-align: left; }
   .always-item .txt .n { font-size: .82rem; font-weight: 500; color: var(--paper-ink); }
   .always-item .txt .d { font-size: .7rem; color: var(--muted-paper); }
-  .author-note { margin: 1.4rem auto 0; max-width: 52rem; padding: 1rem 1.2rem; border: 1px solid rgba(200,154,76,.35); border-radius: .7rem; background: rgba(200,154,76,.08); text-align: center; }
-  .author-note strong { color: var(--brass-bright); }
-  .author-note p { margin: .25rem 0; color: var(--paper-ink); font-size: .78rem; line-height: 1.6; }
+  .author-note { margin: 1.4rem auto 0; max-width: 52rem; padding: 1.1rem 1.3rem; border: 1px solid rgba(200,154,76,.35); border-radius: .7rem; background: rgba(200,154,76,.08); }
+  .author-note .role-block { text-align: center; }
+  .author-note .role-block + .role-block { margin-top: .85rem; padding-top: .8rem; border-top: 1px solid rgba(200,154,76,.22); }
+  .author-note .role-label { margin: 0 0 .2rem; color: var(--brass-bright); font-size: .66rem; letter-spacing: .12em; }
+  .author-note .role-name { margin: 0; color: var(--paper-ink); font-family: "IBM Plex Mono", monospace; font-size: .9rem; }
+  .author-note .role-copy { margin: .22rem 0 0; color: var(--paper-ink); font-size: .78rem; line-height: 1.6; }
+  .author-note .role-detail { margin: .75rem 0 0; color: var(--muted-paper); font-size: .68rem; line-height: 1.55; text-align: center; }
 
   .shelf-note { margin: 0; text-align: center; font-size: .8rem; color: var(--muted-paper); }
   .project-card {
@@ -619,8 +623,16 @@
     </div>
 
     <div class="author-note">
-      <p><strong>작가 = SOMEDAY_</strong> · 에이전트는 기획·집필·검토·개정을 돕는 협업자입니다.</p>
-      <p>특히 Revise에서는 이도현이 개정안을 제안하고, SOMEDAY_가 직접 고쳐 쓰며 채택 여부를 결정합니다.</p>
+      <div class="role-block">
+        <p class="role-label mono">작가 · 최종 결정자</p>
+        <p class="role-name">SOMEDAY_</p>
+        <p class="role-copy">이야기를 선택하고, 직접 쓰고, 마지막 문장을 결정합니다.</p>
+      </div>
+      <div class="role-block">
+        <p class="role-label mono">LANTERN CREW · AI COLLABORATORS</p>
+        <p class="role-copy">기획·리서치·집필 지원·검토·자문·개정을 돕지만, 작품을 대신 결정하지 않습니다.</p>
+      </div>
+      <p class="role-detail">Revise에서는 이도현이 개정안을 제안하고, SOMEDAY_가 직접 고쳐 쓰며 채택 여부를 결정합니다.</p>
     </div>
 
     <div class="always-on">
