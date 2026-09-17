@@ -8,7 +8,9 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🕯️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/subsets/MaruBuri-dynamic-subset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
 <style>
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
@@ -37,7 +39,7 @@
       radial-gradient(ellipse 70% 45% at 18% -8%, rgba(71,115,165,.55), transparent 62%), radial-gradient(ellipse 60% 45% at 90% 20%, rgba(91,70,133,.35), transparent 65%),
       var(--wood-deep);
     color: var(--paper-ink);
-    font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -68,7 +70,7 @@
     color: var(--brass); font-weight: 500; margin: 0;
   }
   h1 {
-    font-family: "Gowun Batang", serif; font-weight: 700;
+    font-family: "Cormorant Garamond", "Maru Buri", serif; font-weight: 500;
     font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0; letter-spacing: -.01em;
     text-wrap: balance; color: var(--paper-ink);
   }
@@ -76,13 +78,13 @@
 
   section { display: flex; flex-direction: column; gap: 1.4rem; }
   .page > .masthead { order: 0; }
-  .page > .crew-section { order: 1; }
-  .page > .protocol-section { order: 2; }
-  .page > .shelf-section { order: 3; }
+  .page > .shelf-section { order: 1; }
+  .page > .crew-section { order: 2; }
+  .page > .protocol-section { order: 3; }
   .page > .workspace-section { order: 4; }
   .section-head { display: flex; flex-direction: column; gap: .3rem; text-align: center; }
   .section-head h2 {
-    font-family: "Noto Serif KR", serif; font-weight: 700; margin: 0;
+    font-family: "Maru Buri", "Noto Serif KR", serif; font-weight: 600; margin: 0;
     font-size: clamp(1.25rem, 3vw, 1.6rem); color: var(--paper-ink);
   }
 
@@ -132,7 +134,7 @@
   .glyph { width: 3.4rem; height: 3.4rem; color: var(--signal); }
   .glyph svg { width: 100%; height: 100%; }
 
-  .niche-name { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.15rem; margin: .1rem 0 0; }
+  .niche-name { font-family: "Maru Buri", serif; font-weight: 600; font-size: 1.15rem; margin: .1rem 0 0; }
   .niche-room { margin: -.3rem 0 0; font-size: .74rem; letter-spacing: .06em; color: #6B5A3F; }
   .niche-duty { margin: .2rem 0 0; font-size: .82rem; line-height: 1.55; color: #4A3B26; }
   .niche-bio { margin: .35rem 0 0; font-size: .74rem; line-height: 1.55; color: #6B5A3F; font-style: italic; }
@@ -185,7 +187,7 @@
   .crew-card .crew-body {
     padding: .9rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .3rem; text-align: center;
   }
-  .crew-persona { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.08rem; margin: 0; }
+  .crew-persona { font-family: "Maru Buri", serif; font-weight: 600; font-size: 1.08rem; margin: 0; }
   .crew-persona .en {
     display: block; font-family: "IBM Plex Mono", monospace; font-weight: 400;
     font-size: .66rem; letter-spacing: .05em; color: #6B5A3F; margin-top: .15rem;
@@ -222,7 +224,7 @@
   .personnel-head { display: flex; gap: 1.1rem; align-items: center; }
   .personnel-photo { width: 5.2rem; height: 5.2rem; border-radius: 50%; object-fit: cover; border: 3px solid var(--brass); flex: none; }
   .personnel-headtext { display: flex; flex-direction: column; gap: .15rem; }
-  .personnel-name { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.3rem; }
+  .personnel-name { font-family: "Maru Buri", serif; font-weight: 600; font-size: 1.3rem; }
   .personnel-en { font-family: "IBM Plex Mono", monospace; font-size: .72rem; color: #6B5A3F; }
   .personnel-role { font-family: "IBM Plex Mono", monospace; font-size: .76rem; color: var(--signal); margin-top: .1rem; }
   .personnel-engine { font-family: "IBM Plex Mono", monospace; font-size: .66rem; color: #6B5A3F; margin-top: .2rem; }
@@ -248,7 +250,7 @@
     width: 2.6rem; height: 2.6rem; border-radius: 50%;
     background: var(--wood-light); border: 1px solid var(--hairline);
     display: flex; align-items: center; justify-content: center;
-    color: var(--brass-bright); font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1rem;
+    color: var(--brass-bright); font-family: "Maru Buri", serif; font-weight: 600; font-size: 1rem;
   }
   .stage-name { font-weight: 500; font-size: .88rem; color: var(--paper-ink); }
   .stage-cmd {
@@ -295,7 +297,7 @@
     background: linear-gradient(135deg, var(--wood-light), var(--wood));
     border: 1px solid var(--hairline); border-radius: 1rem; padding: 1.2rem 1.4rem;
   }
-  .project-card h3 { margin: .2rem 0 .45rem; font-family: "Gowun Batang", serif; font-size: 1.2rem; color: var(--paper-ink); }
+  .project-card h3 { margin: .2rem 0 .45rem; font-family: "Maru Buri", serif; font-weight: 600; font-size: 1.2rem; color: var(--paper-ink); }
   .project-card p { margin: 0; color: var(--muted-paper); font-size: .78rem; line-height: 1.65; }
   .project-card .project-label { color: var(--brass); font: 500 .68rem "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
   .project-card .package { border-left: 1px dashed var(--hairline); padding-left: 1.2rem; }
@@ -341,17 +343,17 @@
   }
   .book-entry:hover, .book-entry:focus-visible { background: linear-gradient(90deg, var(--wood), var(--wood-light)); }
   .book-entry .book-text { display: flex; flex-direction: column; gap: .25rem; }
-  .book-entry .book-title { font-family: "Gowun Batang", serif; font-weight: 700; font-size: 1.05rem; }
+  .book-entry .book-title { font-family: "Maru Buri", serif; font-weight: 700; font-size: 1.25rem; }
   .book-entry .book-meta { font-family: "IBM Plex Mono", monospace; font-size: .7rem; color: var(--muted-paper); letter-spacing: .03em; }
-  .book-entry .book-hook { font-family: "Gowun Batang", serif; font-style: italic; font-size: .82rem; color: var(--brass-bright); }
+  .book-entry .book-hook { font-family: "Maru Buri", serif; font-style: italic; font-size: .9rem; color: var(--brass-bright); }
   .book-entry .book-tag {
     font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .04em;
     color: var(--brass-bright); background: rgba(200,154,76,.16); padding: .1rem .5rem;
     border-radius: 999px; margin-left: .5rem;
   }
   .book-entry .arrow { color: var(--brass-bright); font-size: 1.2rem; flex: none; }
-  .book-entry .book-synopsis { font-family: "Noto Sans KR", sans-serif; font-size: .8rem; color: var(--paper-ink); line-height: 1.6; opacity: .92; }
-  .book-entry .book-diff { font-family: "Noto Sans KR", sans-serif; font-size: .74rem; color: var(--brass-bright); line-height: 1.5; }
+  .book-entry .book-synopsis { font-family: "Pretendard", sans-serif; font-size: .88rem; color: var(--paper-ink); line-height: 1.7; opacity: .92; }
+  .book-entry .book-diff { font-family: "Pretendard", sans-serif; font-size: .78rem; color: var(--brass-bright); line-height: 1.5; }
   .book-entry .book-diff::before { content: "차별점 · "; font-family: "IBM Plex Mono", monospace; color: var(--brass); }
   .shelf.view-grid .book-synopsis { color: #4A3B26; }
   .shelf.view-grid .book-diff { color: var(--signal); }
