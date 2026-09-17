@@ -382,6 +382,9 @@
     display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
     font-size: .8rem; color: var(--muted-paper); line-height: 1.7;
   }
+  .author-signature { flex: 0 0 100%; text-align: center; margin: .2rem 0 .55rem; }
+  .author-signature .signature-name { display: block; font: 500 .66rem "IBM Plex Mono", monospace; letter-spacing: .2em; color: var(--brass); margin-bottom: .35rem; }
+  .author-signature .signature-line { display: block; font: italic 400 .98rem "Maru Buri", serif; color: var(--muted-paper); letter-spacing: .04em; }
   .colophon p { margin: 0; max-width: 30rem; }
   .colophon .links { display: flex; flex-direction: column; gap: .3rem; align-items: flex-end; }
   .colophon a { color: var(--brass-bright); text-decoration: none; }
@@ -389,6 +392,7 @@
   .colophon .stamp { font-family: "IBM Plex Mono", monospace; font-size: .72rem; color: #8A7A5C; }
   @media (max-width: 560px) {
     .colophon { flex-direction: column; }
+    .author-signature { flex: 0 0 auto; width: 100%; }
     .colophon .links { align-items: flex-start; }
   }
 </style>
@@ -413,7 +417,7 @@
   <header class="masthead">
     <p class="eyebrow">SOMEDAY_</p>
     <h1>The Lantern Room</h1>
-    <p class="tagline">여운, 호기심, 그리고_</p>
+    <p class="tagline">아직 쓰이지 않은 이야기를 위한 방</p>
   </header>
 
   <section class="workspace-section">
@@ -638,6 +642,10 @@
   </section>
 
   <footer class="colophon">
+    <div class="author-signature" aria-label="작가 Someday_의 서명">
+      <span class="signature-name">Someday_</span>
+      <span class="signature-line">여운, 호기심, 그리고_</span>
+    </div>
     <p>이 방의 불은 저절로 켜지지 않습니다. 창작자가 필요할 때, 필요한 사람의 등불을 밝힙니다.</p>
     <div class="links">
       <a href="https://github.com/jgjeong730/bookshelf1" target="_blank" rel="noopener">The Lantern Protocol →</a>
