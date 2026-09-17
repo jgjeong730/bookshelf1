@@ -69,11 +69,15 @@
     font-size: .72rem; letter-spacing: .32em; text-transform: uppercase;
     color: var(--brass); font-weight: 500; margin: 0;
   }
-  h1 {
+  .masthead h1 {
     font-family: "Cormorant Garamond", "Maru Buri", serif; font-weight: 500;
     font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0; letter-spacing: -.01em;
     text-wrap: balance; color: var(--paper-ink);
+    display: flex; align-items: center; justify-content: center; gap: .36em;
   }
+  .masthead-symbol { display: block; width: 1.18em; height: 1.18em; flex: none; object-fit: contain; }
+  @media (max-width: 560px) { .masthead-symbol { width: .68em; height: .68em; } .masthead h1 { gap: .24em; } }
+  @media (max-width: 360px) { .masthead-symbol { width: .58em; height: .58em; } .masthead h1 { gap: .18em; } }
   .tagline { margin: 0; color: var(--muted-paper); font-size: 1rem; max-width: 32rem; text-wrap: balance; }
 
   section { display: flex; flex-direction: column; gap: 1.4rem; }
@@ -285,7 +289,7 @@
     margin: 0 -.2rem; align-self: flex-start; margin-top: 1.7rem;
   }
   @media (max-width: 620px) { .process { justify-content: flex-start; } .stage-link { display: block; } }
-  @media (max-width: 620px) { .book-entry { min-height: 0; align-items: flex-start; padding: 1.3rem 1rem; } .book-entry .book-tag { display: inline-block; margin: .45rem 0 0; } .book-entry .arrow { font-size: 1.2rem; } }
+  @media (max-width: 620px) { .shelf > .book-entry { width: 100%; } .book-entry { min-height: 0; align-items: flex-start; padding: 1.15rem .9rem; } .book-entry .book-tag { display: inline-block; margin: .45rem 0 0; } .book-entry .arrow { font-size: 1.2rem; } }
   .stage-avatar {
     width: 3.4rem; height: 3.4rem; border-radius: 50%; overflow: hidden;
     border: 2px solid var(--brass); flex: none;
@@ -311,13 +315,12 @@
   .always-item .txt { display: flex; flex-direction: column; text-align: left; }
   .always-item .txt .n { font-size: .82rem; font-weight: 500; color: var(--paper-ink); }
   .always-item .txt .d { font-size: .7rem; color: var(--muted-paper); }
-  .author-note { margin: 1.4rem auto 0; max-width: 52rem; padding: 1.1rem 1.3rem; border: 1px solid rgba(200,154,76,.35); border-radius: .7rem; background: rgba(200,154,76,.08); }
+  .author-note { margin: 1.1rem auto 0; max-width: 52rem; padding: .2rem .4rem; }
   .author-note .role-block { text-align: center; }
-  .author-note .role-block + .role-block { margin-top: .85rem; padding-top: .8rem; border-top: 1px solid rgba(200,154,76,.22); }
+  .author-note .role-block + .role-block { margin-top: .8rem; padding-top: .75rem; border-top: 1px solid rgba(200,154,76,.22); }
   .author-note .role-label { margin: 0 0 .2rem; color: var(--brass-bright); font-size: .66rem; letter-spacing: .12em; }
   .author-note .role-name { margin: 0; color: var(--paper-ink); font-family: "IBM Plex Mono", monospace; font-size: .9rem; }
   .author-note .role-copy { margin: .22rem 0 0; color: var(--paper-ink); font-size: .78rem; line-height: 1.6; }
-  .author-note .role-detail { margin: .75rem 0 0; color: var(--muted-paper); font-size: .68rem; line-height: 1.55; text-align: center; }
 
   .shelf-note { margin: 0; text-align: center; font-size: .8rem; color: var(--muted-paper); }
   .project-card {
@@ -360,20 +363,21 @@
   .shelf.view-grid .book-hook { color: var(--signal); }
   .shelf.view-grid .book-tag { background: rgba(36,26,16,.08); color: #6B5A3F; }
   .shelf.view-grid .arrow { align-self: flex-end; margin-top: -1.6rem; }
+  .shelf > .book-entry { width: min(84%, 58rem); margin-inline: auto; }
   .book-entry {
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     background: radial-gradient(ellipse at 12% 0%, rgba(196,154,89,.2), transparent 48%), linear-gradient(110deg, #263c5b, #17243a 68%);
     border: 1px solid rgba(241,207,130,.3); border-left: 6px solid var(--brass-bright);
     border-radius: .9rem;
-    padding: clamp(1.5rem, 4vw, 2.7rem);
-    min-height: 17rem;
+    padding: clamp(1.2rem, 3vw, 2.2rem);
+    min-height: 14.5rem;
     box-shadow: 0 1.5rem 3rem -1.4rem rgba(0,0,0,.65), inset 0 1px rgba(255,255,255,.04);
     text-decoration: none; color: var(--paper-ink);
     transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
   }
   .book-entry:hover, .book-entry:focus-visible { background: radial-gradient(ellipse at 12% 0%, rgba(196,154,89,.25), transparent 48%), linear-gradient(110deg, #2d4568, #19263d 68%); transform: translateY(-.18rem); box-shadow: 0 1.8rem 3.5rem -1.4rem rgba(0,0,0,.72); }
   .book-entry .book-text { display: flex; flex-direction: column; gap: .55rem; max-width: 54rem; }
-  .book-entry .book-title { font-family: "Maru Buri", serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.25; }
+  .book-entry .book-title { font-family: "Maru Buri", serif; font-weight: 700; font-size: clamp(1.62rem, 3.6vw, 2.25rem); line-height: 1.25; }
   .book-entry .book-meta { font-family: "IBM Plex Mono", monospace; font-size: .7rem; color: var(--muted-paper); letter-spacing: .03em; }
   .book-entry .book-hook { font-family: "Maru Buri", serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--brass-bright); margin-top: .25rem; }
   .book-entry .book-tag {
@@ -443,7 +447,7 @@
 
   <header class="masthead">
     <p class="eyebrow">SOMEDAY_</p>
-    <h1>The Lantern Room</h1>
+    <h1><img class="masthead-symbol" src="asst/lantern-room-symbol.png" alt="" aria-hidden="true">The Lantern Room</h1>
     <p class="tagline">아직 쓰이지 않은 이야기를 위한 방</p>
   </header>
 
@@ -555,7 +559,6 @@
       <p class="eyebrow mono">THE LANTERN PROTOCOL · HOW LANTERNING WORKS</p>
       <h2>Lanterning의 일하는 순서</h2>
     </div>
-    <p class="shelf-note"><strong>SOMEDAY_가 작가이자 최종 결정자입니다.</strong> 각 에이전트는 원고를 대신 확정하지 않고, 다음 판단을 위한 결과물을 제공합니다.</p>
     <div class="process">
       <div class="stage">
         <div class="stage-avatar"><img src="images/lp-researcher.png" alt="강민재" loading="lazy"></div>
@@ -622,19 +625,6 @@
       </div>
     </div>
 
-    <div class="author-note">
-      <div class="role-block">
-        <p class="role-label mono">작가 · 최종 결정자</p>
-        <p class="role-name">SOMEDAY_</p>
-        <p class="role-copy">이야기를 선택하고, 직접 쓰고, 마지막 문장을 결정합니다.</p>
-      </div>
-      <div class="role-block">
-        <p class="role-label mono">LANTERN CREW · AI COLLABORATORS</p>
-        <p class="role-copy">기획·리서치·집필 지원·검토·자문·개정을 돕지만, 작품을 대신 결정하지 않습니다.</p>
-      </div>
-      <p class="role-detail">Revise에서는 이도현이 개정안을 제안하고, SOMEDAY_가 직접 고쳐 쓰며 채택 여부를 결정합니다.</p>
-    </div>
-
     <div class="always-on">
       <p class="always-title mono">상시 진행 · 순서 없음</p>
       <div class="always-row">
@@ -642,7 +632,7 @@
           <div class="stage-avatar"><img src="images/lp-archivist.png" alt="문하진" loading="lazy"></div>
           <div class="txt">
             <span class="n">문하진 · 총무</span>
-            <span class="d">공방 전체 정합성 상시 점검 · /audit</span>
+            <span class="d">전체 기록과 흐름의 정합성 상시 점검 · /audit</span>
           </div>
         </div>
         <div class="always-item">
@@ -652,6 +642,18 @@
             <span class="d">저작권·유사성 리스크 매주 점검</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="author-note">
+      <div class="role-block">
+        <p class="role-label mono">LANTERN CREW · AI COLLABORATORS</p>
+        <p class="role-copy">기획·리서치·집필 지원·검토·자문·개정을 돕지만, 작품을 대신 결정하지 않습니다.</p>
+      </div>
+      <div class="role-block">
+        <p class="role-label mono">작가 · 최종 결정자</p>
+        <p class="role-name">SOMEDAY_</p>
+        <p class="role-copy">이야기를 선택하고, 직접 쓰고, 마지막 문장을 결정합니다.</p>
       </div>
     </div>
   </section>
